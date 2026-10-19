@@ -1,11 +1,12 @@
 figure { display: inline-block; max-width: 1016px; margin: 0; }
 figure img { display: block; width: 100%; height: auto; }
+/* The colour of the outlines is --cpld-region-color (the viewer sets it from its setting cpld.regionColor), #ffd400 without it. */
 /* An <area> has no box to style, so the script below draws each one as an SVG
    outline over the image. 1px, non-scaling, with a dark halo to read on any photo. */
 #stage { position: relative; }
 #region-overlay { padding: 0; box-sizing: border-box; position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; filter: drop-shadow(0 0 1px #000); }
-#region-overlay * { fill: none; stroke: #ffd400; stroke-width: 1px; vector-effect: non-scaling-stroke; }
-#region-overlay .active { fill: rgba(255, 212, 0, .3); }
+#region-overlay * { fill: none; stroke: var(--cpld-region-color, #ffd400); stroke-width: 1px; vector-effect: non-scaling-stroke; }
+#region-overlay .active { fill: var(--cpld-region-color, #ffd400); fill-opacity: .3; }
 #region-popup { position: absolute; z-index: 2; max-width: 320px; box-sizing: border-box; padding: 8px 28px 8px 10px; background: #fff; color: #111; border: 1px solid #333; border-radius: 4px; box-shadow: 0 2px 8px rgba(0, 0, 0, .4); font: 13px/1.4 system-ui, sans-serif; }
 #region-popup[hidden] { display: none; }
 #region-popup dl { display: grid; grid-template-columns: max-content 1fr; gap: 2px 10px; margin: 0; }
@@ -14,15 +15,15 @@ figure img { display: block; width: 100%; height: auto; }
 #region-popup dd { grid-column: 2; margin: 0; overflow-wrap: anywhere; }
 #region-popup a { color: #0645ad; }
 #region-popup-close { position: absolute; top: 2px; right: 4px; border: 0; background: none; font-size: 18px; line-height: 1; cursor: pointer; }
-#region-overlay .focus { fill: rgba(255, 212, 0, .35); stroke-width: 3px; }
+#region-overlay .focus { fill: var(--cpld-region-color, #ffd400); fill-opacity: .35; stroke-width: 3px; }
 /* Adding regions: the tools over the corner of the image, the layer to draw on, and the form. */
 #region-draw { padding: 0; box-sizing: border-box; position: absolute; top: 0; left: 0; pointer-events: none; touch-action: none; }
 #region-draw.drawing { pointer-events: auto; cursor: crosshair; }
-#region-draw * { fill: rgba(255, 212, 0, .25); stroke: #ffd400; stroke-width: 1.5px; stroke-dasharray: 4 3; vector-effect: non-scaling-stroke; }
+#region-draw * { fill: var(--cpld-region-color, #ffd400); fill-opacity: .25; stroke: var(--cpld-region-color, #ffd400); stroke-width: 1.5px; stroke-dasharray: 4 3; vector-effect: non-scaling-stroke; }
 #region-tools { position: absolute; z-index: 3; top: 6px; left: 6px; display: flex; flex-wrap: wrap; gap: 4px; align-items: center; max-width: calc(100% - 12px); font: 12px/1.3 system-ui, sans-serif; }
 #region-tools button, #region-form button { font: inherit; padding: 2px 8px; border: 1px solid #333; border-radius: 3px; background: rgba(255, 255, 255, .92); color: #111; cursor: pointer; }
 #region-tools button[hidden], #region-tools textarea[hidden] { display: none; }
-#region-tools button.on { background: #ffd400; }
+#region-tools button.on { background: var(--cpld-region-color, #ffd400); }
 #region-hint { padding: 2px 6px; border-radius: 3px; background: rgba(255, 255, 255, .92); color: #111; }
 #region-hint:empty { display: none; }
 #region-export { width: 100%; box-sizing: border-box; font: 11px/1.3 ui-monospace, monospace; }
