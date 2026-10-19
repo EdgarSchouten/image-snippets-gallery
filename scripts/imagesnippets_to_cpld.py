@@ -405,6 +405,9 @@ def page_iri(row):
     return row["graph"]
 
 
+IMAGE_GRAPH = "doc:image-graph"
+
+
 def build_document(row, triples, regions, wikidata=None, wikidata_lang="en"):
     """The Linked Document of an image: {'page', 'graph' (JSON-LD), 'regions': [...], 'width', 'height'}."""
     page = page_iri(row)
@@ -494,6 +497,22 @@ def build_document(row, triples, regions, wikidata=None, wikidata_lang="en"):
     ordered = [page, "doc:image", "doc:canvas"] + ["doc:" + i for i in region_ids.values()]
     graph = [nodes.pop(i) for i in ordered if i in nodes]
     graph += list(nodes.values())
+
+    # The image, the canvas, the regions and what the page itself names (its instances) are the image graph, a
+    # named graph in the file. The page, its parts' text and the registry labels stay in the default graph.
+    def in_image_graph(node):
+        nid = node["@id"]
+        return nid.startswith("doc:") or (nid.startswith(page + "#") and nid != page)
+
+    image_nodes = [n for n in graph if in_image_graph(n)]
+    rest = [n for n in graph if not in_image_graph(n)]
+    if image_nodes:
+        at = 1 if rest and rest[0]["@id"] == page else 0
+        rest[at:at] = [
+            {"@id": IMAGE_GRAPH, "rdfs:label": [{"@value": "Image graph"}], "schema:isPartOf": [{"@id": page}]},
+            {"@id": IMAGE_GRAPH, "@graph": image_nodes},
+        ]
+        graph = rest
     return {
         "page": page,
         "graph": {"@context": context, "@graph": graph},

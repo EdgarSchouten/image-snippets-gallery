@@ -24,6 +24,20 @@ def triples():
     return [(b["s"]["value"], b["p"]["value"], b["o"]) for b in bindings]
 
 
+def flat(doc):
+    """The nodes of the document by @id, those of the default graph and of the graph objects in it."""
+    nodes = {}
+
+    def walk(items):
+        for n in items:
+            if "@graph" in n:
+                walk(n["@graph"])
+            if len(n) > (2 if "@graph" in n else 1):
+                nodes[n["@id"]] = n
+    walk(doc["graph"]["@graph"])
+    return nodes
+
+
 class Regions(unittest.TestCase):
     def test_rect(self):
         self.assertEqual(m.shape_of("rect", 'x="142" y="258" height="22" width="19"'),
@@ -100,16 +114,30 @@ class Document(unittest.TestCase):
 
     def test_page_holds_the_canvas_and_every_region_flat(self):
         _, _, doc = self.build()
-        by_id = {n["@id"]: n for n in doc["graph"]["@graph"]}
+        by_id = flat(doc)
         page = by_id[doc["page"]]
         self.assertEqual([p["@id"] for p in page["schema:hasPart"]], ["doc:canvas", "doc:region-b", "doc:region-a", "doc:region-c"])
         self.assertNotIn("schema:hasPart", by_id["doc:image"])
         self.assertNotIn("schema:hasPart", by_id["doc:canvas"])
         self.assertEqual(page["schema:mainEntity"], [{"@id": "doc:image"}])
 
+    def test_the_image_has_its_own_named_graph(self):
+        _, _, doc = self.build()
+        top = doc["graph"]["@graph"]
+        graphs = [n for n in top if "@graph" in n]
+        self.assertEqual([g["@id"] for g in graphs], ["doc:image-graph"])
+        inside = [n["@id"] for n in graphs[0]["@graph"]]
+        self.assertEqual(inside[:2], ["doc:image", "doc:canvas"])
+        self.assertTrue({"doc:region-a", "doc:region-b", "doc:region-c"} <= set(inside))
+        outside = [n["@id"] for n in top if "@graph" not in n]
+        self.assertEqual(outside[0], doc["page"])
+        self.assertFalse(any(i.startswith("doc:") and i != "doc:image-graph" for i in outside))
+        described = [n for n in top if n["@id"] == "doc:image-graph" and "@graph" not in n][0]
+        self.assertEqual(described["schema:isPartOf"], [{"@id": doc["page"]}])
+
     def test_regions_have_selectors_and_labels(self):
         _, _, doc = self.build()
-        by_id = {n["@id"]: n for n in doc["graph"]["@graph"]}
+        by_id = flat(doc)
         a = by_id["doc:region-a"]
         self.assertEqual(a["rdfs:label"], [{"@value": "Region A"}])
         self.assertEqual(a["oa:hasSelector"][0]["rdf:value"], "xywh=pixel:142,258,19,22")
@@ -124,7 +152,7 @@ class Document(unittest.TestCase):
     def test_wikidata_labels_replace_the_store(self):
         q = "http://www.wikidata.org/entity/Q34679"
         _, _, doc = self.build({q: "SAND"})
-        node = [n for n in doc["graph"]["@graph"] if n["@id"] == q][0]
+        node = flat(doc)[q]
         self.assertEqual(node["rdfs:label"], [{"@value": "SAND", "@language": "en"}])
 
     def test_wikidata_iris(self):

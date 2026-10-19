@@ -16,7 +16,8 @@
   popup.appendChild(body);
   stage.appendChild(popup);
 
-  var graph = null, context = {}, byId = {}, loading = null;
+  var IMAGE_GRAPH = 'doc:image-graph';   // the named graph with the image, its regions and what they show
+  var graph = null, context = {}, byId = {}, loading = null, hasImageGraph = false;
   var regionActions = null, relayout = null;   // set by the editor, when it is open
   function expand(id) {
     var i = id.indexOf(':');
@@ -28,7 +29,13 @@
   function load() {
     function add(doc) {
       context = doc['@context'] || {};
-      (doc['@graph'] || []).forEach(function (n) { byId[expand(n['@id'])] = n; });
+      // The nodes of the default graph and of the graph objects in it (the image graph): one lookup.
+      (function walk(nodes) {
+        (nodes || []).forEach(function (n) {
+          if (n['@graph']) { if (n['@id'] && expand(n['@id']) === expand(IMAGE_GRAPH)) { hasImageGraph = true; } walk(n['@graph']); }
+          if (Object.keys(n).some(function (k) { return k !== '@id' && k !== '@graph'; })) { byId[expand(n['@id'])] = n; }
+        });
+      })(doc['@graph']);
     }
     var inline = Array.prototype.map.call(document.querySelectorAll('script[type="application/ld+json"]'), function (s) {
       try { return JSON.parse(s.textContent); } catch (e) { return null; }
@@ -373,7 +380,10 @@
       toggle.classList.toggle('on', !open);
     });
     copy.addEventListener('click', function () {
-      var text = JSON.stringify({ '@context': context, '@graph': added.concat(changed).concat([{ '@id': pageIri(), 'schema:hasPart': added.filter(function (n) { return n['oa:hasSelector']; }).map(function (n) { return { '@id': n['@id'] }; }) }]) }, null, 2);
+      var page = { '@id': pageIri(), 'schema:hasPart': added.filter(function (n) { return n['oa:hasSelector']; }).map(function (n) { return { '@id': n['@id'] }; }) };
+      var nodes = added.concat(changed);
+      // A graph file with an image graph gets the nodes in that graph; the page node stays in the default graph.
+      var text = JSON.stringify({ '@context': context, '@graph': hasImageGraph ? [page, { '@id': IMAGE_GRAPH, '@graph': nodes }] : nodes.concat([page]) }, null, 2);
       var done = function () { hint.textContent = 'Copied. Merge the nodes into the graph file.' + (deleted.length ? ' Remove from it: ' + deleted.join(', ') + '.' : ''); };
       var fallback = function () { exported.value = text; exported.hidden = false; exported.select(); hint.textContent = 'Copy the text (Ctrl/Cmd+C).' + (deleted.length ? ' Remove from the graph file: ' + deleted.join(', ') + '.' : ''); };
       if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(done, fallback); else fallback();
@@ -635,6 +645,7 @@
         addParts: added.filter(function (n) { return n['oa:hasSelector']; }).map(function (n) { return n['@id']; }),
         removeIds: deleted.map(function (id) { return 'doc:' + id; })
       };
+      if (hasImageGraph) { detail.graphId = IMAGE_GRAPH; }
       save.disabled = true;
       hint.textContent = 'Saving...';
       clearTimeout(saveTimer);

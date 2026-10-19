@@ -215,319 +215,6 @@
       }
     },
     {
-      "@id": "doc:imagesnippets-artwork-184336",
-      "@type": [
-        "schema:ImageObject",
-        "lio:Image"
-      ],
-      "schema:contentUrl": {
-        "@id": "https://imagesnippets.com/imgtag/images/info@margaretwarren.us/20190902_184336.jpg"
-      },
-      "schema:thumbnail": {
-        "@id": "https://imagesnippets.com/imgtag/images/info@margaretwarren.us/thumbnails/20190902_184336.jpg"
-      },
-      "schema:width": 1016,
-      "schema:height": 762
-    },
-    {
-      "@id": "doc:canvas",
-      "@type": "nas:Figure",
-      "edm:renditionOf": {
-        "@id": "doc:artwork-184336"
-      }
-    },
-    {
-      "@id": "doc:region-a",
-      "rdfs:label": "Region A",
-      "lio:shows": {
-        "@id": "doc:boat-instance-1"
-      },
-      "oa:hasSelector": {
-        "@type": "oa:FragmentSelector",
-        "dcterms:conformsTo": {
-          "@id": "http://www.w3.org/TR/media-frags/"
-        },
-        "rdf:value": "xywh=pixel:144,252,146,30"
-      }
-    },
-    {
-      "@id": "doc:region-b",
-      "rdfs:label": "Region B",
-      "lio:shows": {
-        "@id": "doc:boat-instance-2"
-      },
-      "oa:hasSelector": {
-        "@type": "oa:FragmentSelector",
-        "dcterms:conformsTo": {
-          "@id": "http://www.w3.org/TR/media-frags/"
-        },
-        "rdf:value": "xywh=pixel:526,270,35,11"
-      }
-    },
-    {
-      "@id": "doc:region-c",
-      "rdfs:label": "Region C",
-      "lio:shows": {
-        "@id": "doc:rock-instance-1"
-      },
-      "oa:hasSelector": {
-        "@type": "oa:FragmentSelector",
-        "dcterms:conformsTo": {
-          "@id": "http://www.w3.org/TR/media-frags/"
-        },
-        "rdf:value": "xywh=pixel:274,604,58,48"
-      }
-    },
-    {
-      "@id": "doc:region-d",
-      "rdfs:label": "Region D",
-      "lio:shows": {
-        "@id": "doc:person-instance-1"
-      },
-      "oa:hasSelector": {
-        "@type": "oa:SvgSelector",
-        "rdf:value": "<svg xmlns=\"http://www.w3.org/2000/svg\"><polygon points=\"212,239 222,246 230,265 234,295 233,335 231,388 228,398 202,398 200,388 205,345 200,285 202,268 204,248\"/></svg>"
-      }
-    },
-    {
-      "@id": "doc:region-e",
-      "rdfs:label": "Region E",
-      "lio:shows": {
-        "@id": "doc:person-instance-2"
-      },
-      "oa:hasSelector": {
-        "@type": "oa:SvgSelector",
-        "rdf:value": "<svg xmlns=\"http://www.w3.org/2000/svg\"><polygon points=\"250,250 259,255 268,272 271,305 268,340 260,385 235,388 239,345 230,310 228,275 242,258\"/></svg>"
-      }
-    },
-    {
-      "@id": "doc:region-f",
-      "rdfs:label": "Region F",
-      "lio:shows": {
-        "@id": "doc:person-instance-3"
-      },
-      "oa:hasSelector": {
-        "@type": "oa:SvgSelector",
-        "rdf:value": "<svg xmlns=\"http://www.w3.org/2000/svg\"><polygon points=\"302,242 315,245 318,258 326,268 328,300 321,335 321,399 292,399 294,350 286,320 286,270 298,250\"/></svg>"
-      }
-    },
-    {
-      "@id": "doc:region-g",
-      "rdfs:label": "Region G",
-      "lio:shows": {
-        "@id": "doc:person-instance-4"
-      },
-      "oa:hasSelector": {
-        "@type": "oa:SvgSelector",
-        "rdf:value": "<svg xmlns=\"http://www.w3.org/2000/svg\"><polygon points=\"424,245 440,245 448,262 468,275 479,288 478,320 468,350 465,385 475,420 486,449 474,456 459,440 450,410 440,385 430,385 415,420 402,446 394,448 400,410 408,370 402,345 402,315 412,280 420,265\"/></svg>"
-      }
-    },
-    {
-      "@id": "doc:region-h",
-      "rdfs:label": "Region H",
-      "lio:shows": {
-        "@id": "doc:person-instance-5"
-      },
-      "oa:hasSelector": {
-        "@type": "oa:SvgSelector",
-        "rdf:value": "<svg xmlns=\"http://www.w3.org/2000/svg\"><polygon points=\"578,239 590,234 602,238 610,249 625,242 614,268 619,305 628,335 632,351 616,346 608,365 605,390 605,425 598,430 588,428 580,415 575,385 568,355 564,340 564,320 552,322 541,330 532,330 530,324 536,319 548,312 559,295 570,270 575,260\"/></svg>"
-      }
-    },
-    {
-      "@id": "doc:region-i",
-      "rdfs:label": "Region I",
-      "lio:shows": {
-        "@id": "doc:person-instance-6"
-      },
-      "oa:hasSelector": {
-        "@type": "oa:SvgSelector",
-        "rdf:value": "<svg xmlns=\"http://www.w3.org/2000/svg\"><polygon points=\"702,249 715,248 722,258 730,268 739,282 736,295 728,295 725,322 724,350 719,385 714,402 700,406 695,395 688,380 685,350 678,340 672,335 675,320 680,300 685,275 695,268 699,258\"/></svg>"
-      }
-    },
-    {
-      "@id": "doc:region-j",
-      "rdfs:label": "Region J",
-      "lio:shows": {
-        "@id": "http://www.wikidata.org/entity/Q44440"
-      },
-      "oa:hasSelector": {
-        "@type": "oa:SvgSelector",
-        "rdf:value": "<svg xmlns=\"http://www.w3.org/2000/svg\"><polygon points=\"622,264 766,264 768,232 776,232 778,265 850,265 882,270 882,287 850,287 830,286 778,284 766,284 750,274 622,274\"/></svg>"
-      }
-    },
-    {
-      "@id": "doc:region-l",
-      "rdfs:label": "Region L",
-      "lio:shows": {
-        "@id": "doc:rock-instance-2"
-      },
-      "oa:hasSelector": {
-        "@type": "oa:FragmentSelector",
-        "dcterms:conformsTo": {
-          "@id": "http://www.w3.org/TR/media-frags/"
-        },
-        "rdf:value": "xywh=pixel:356,616,44,44"
-      }
-    },
-    {
-      "@id": "doc:region-m",
-      "rdfs:label": "Region M",
-      "lio:shows": {
-        "@id": "doc:animal-instance-1"
-      },
-      "schema:position": 50,
-      "oa:hasSelector": {
-        "@type": "oa:SvgSelector",
-        "rdf:value": "<svg xmlns=\"http://www.w3.org/2000/svg\"><polygon points=\"616,347 632,344 642,350 651,364 647,376 640,385 628,386 621,384 618,372 617,358\"/></svg>"
-      }
-    },
-    {
-      "@id": "doc:region-n",
-      "rdfs:label": "Region N",
-      "lio:shows": {
-        "@id": "doc:organization-instance-1"
-      },
-      "oa:hasSelector": {
-        "@type": "oa:FragmentSelector",
-        "dcterms:conformsTo": {
-          "@id": "http://www.w3.org/TR/media-frags/"
-        },
-        "rdf:value": "xywh=pixel:192,226,549,232"
-      },
-      "schema:position": 101
-    },
-    {
-      "@id": "doc:boat-instance-1",
-      "@type": "http://dbpedia.org/resource/Boat",
-      "rdfs:label": "Unidentified Boat 1"
-    },
-    {
-      "@id": "doc:boat-instance-2",
-      "@type": "http://dbpedia.org/resource/Boat",
-      "rdfs:label": "Unidentified Boat 2"
-    },
-    {
-      "@id": "doc:animal-instance-1",
-      "@type": "http://dbpedia.org/resource/Dog",
-      "rdfs:label": "Unidentified Dog 1"
-    },
-    {
-      "@id": "doc:rock-instance-1",
-      "@type": "http://www.wikidata.org/entity/Q8063",
-      "rdfs:label": "Unidentified Rock 1"
-    },
-    {
-      "@id": "doc:rock-instance-2",
-      "@type": "http://www.wikidata.org/entity/Q8063",
-      "rdfs:label": "Unidentified Rock 2"
-    },
-    {
-      "@id": "doc:person-instance-1",
-      "@type": "schema:Person",
-      "schema:name": "Joaquin Vanschoren",
-      "schema:identifier": {
-        "@type": "schema:PropertyValue",
-        "schema:propertyID": "ORCID",
-        "schema:value": "0000-0001-7044-9805"
-      },
-      "owl:sameAs": {
-        "@id": "https://orcid.org/0000-0001-7044-9805"
-      }
-    },
-    {
-      "@id": "doc:person-instance-2",
-      "@type": "schema:Person",
-      "schema:name": "David Ayman Shamma",
-      "schema:identifier": {
-        "@type": "schema:PropertyValue",
-        "schema:propertyID": "ORCID",
-        "schema:value": "0000-0003-2399-9374"
-      },
-      "owl:sameAs": {
-        "@id": "https://orcid.org/0000-0003-2399-9374"
-      }
-    },
-    {
-      "@id": "doc:person-instance-3",
-      "@type": "schema:Person",
-      "schema:name": "Patrick J. Hayes",
-      "schema:identifier": {
-        "@type": "schema:PropertyValue",
-        "schema:propertyID": "ORCID",
-        "schema:value": "0000-0002-6639-9187"
-      },
-      "owl:sameAs": {
-        "@id": "https://orcid.org/0000-0002-6639-9187"
-      }
-    },
-    {
-      "@id": "doc:person-instance-4",
-      "@type": "schema:Person",
-      "schema:name": "Adina Williams",
-      "schema:identifier": {
-        "@type": "schema:PropertyValue",
-        "schema:propertyID": "ORCID",
-        "schema:value": "0000-0001-5281-3343"
-      },
-      "owl:sameAs": {
-        "@id": "https://orcid.org/0000-0001-5281-3343"
-      }
-    },
-    {
-      "@id": "doc:person-instance-5",
-      "@type": "schema:Person",
-      "schema:name": "Hannah Rose Kirk",
-      "schema:identifier": {
-        "@type": "schema:PropertyValue",
-        "schema:propertyID": "ORCID",
-        "schema:value": "0000-0002-7419-5993"
-      },
-      "owl:sameAs": {
-        "@id": "https://orcid.org/0000-0002-7419-5993"
-      },
-      "schema:owns": {
-        "@id": "doc:animal-instance-1"
-      }
-    },
-    {
-      "@id": "doc:person-instance-6",
-      "@type": "schema:Person",
-      "schema:name": "Oana Inel",
-      "schema:identifier": {
-        "@type": "schema:PropertyValue",
-        "schema:propertyID": "ORCID",
-        "schema:value": "0000-0003-4691-6586"
-      },
-      "owl:sameAs": {
-        "@id": "https://orcid.org/0000-0003-4691-6586"
-      }
-    },
-    {
-      "@id": "doc:organization-instance-1",
-      "@type": "schema:Organization",
-      "schema:name": "Friends",
-      "schema:member": [
-        {
-          "@id": "doc:person-instance-1"
-        },
-        {
-          "@id": "doc:person-instance-2"
-        },
-        {
-          "@id": "doc:person-instance-3"
-        },
-        {
-          "@id": "doc:person-instance-4"
-        },
-        {
-          "@id": "doc:person-instance-5"
-        },
-        {
-          "@id": "doc:person-instance-6"
-        }
-      ]
-    },
-    {
       "@id": "doc:person-c",
       "@type": "schema:Person",
       "schema:name": "Margaret Warren",
@@ -539,6 +226,331 @@
         "schema:propertyID": "ORCID",
         "schema:value": "0000-0002-4248-300X"
       }
+    },
+    {
+      "@id": "doc:image-graph",
+      "rdfs:label": "Image graph",
+      "schema:isPartOf": {
+        "@id": "https://imagesnippets.com/imgtag/images/info@margaretwarren.us/20190902_184336.html"
+      }
+    },
+    {
+      "@id": "doc:image-graph",
+      "@graph": [
+        {
+          "@id": "doc:imagesnippets-artwork-184336",
+          "@type": [
+            "schema:ImageObject",
+            "lio:Image"
+          ],
+          "schema:contentUrl": {
+            "@id": "https://imagesnippets.com/imgtag/images/info@margaretwarren.us/20190902_184336.jpg"
+          },
+          "schema:thumbnail": {
+            "@id": "https://imagesnippets.com/imgtag/images/info@margaretwarren.us/thumbnails/20190902_184336.jpg"
+          },
+          "schema:width": 1016,
+          "schema:height": 762
+        },
+        {
+          "@id": "doc:canvas",
+          "@type": "nas:Figure",
+          "edm:renditionOf": {
+            "@id": "doc:artwork-184336"
+          }
+        },
+        {
+          "@id": "doc:region-a",
+          "rdfs:label": "Region A",
+          "lio:shows": {
+            "@id": "doc:boat-instance-1"
+          },
+          "oa:hasSelector": {
+            "@type": "oa:FragmentSelector",
+            "dcterms:conformsTo": {
+              "@id": "http://www.w3.org/TR/media-frags/"
+            },
+            "rdf:value": "xywh=pixel:144,252,146,30"
+          }
+        },
+        {
+          "@id": "doc:region-b",
+          "rdfs:label": "Region B",
+          "lio:shows": {
+            "@id": "doc:boat-instance-2"
+          },
+          "oa:hasSelector": {
+            "@type": "oa:FragmentSelector",
+            "dcterms:conformsTo": {
+              "@id": "http://www.w3.org/TR/media-frags/"
+            },
+            "rdf:value": "xywh=pixel:526,270,35,11"
+          }
+        },
+        {
+          "@id": "doc:region-c",
+          "rdfs:label": "Region C",
+          "lio:shows": {
+            "@id": "doc:rock-instance-1"
+          },
+          "oa:hasSelector": {
+            "@type": "oa:FragmentSelector",
+            "dcterms:conformsTo": {
+              "@id": "http://www.w3.org/TR/media-frags/"
+            },
+            "rdf:value": "xywh=pixel:274,604,58,48"
+          }
+        },
+        {
+          "@id": "doc:region-d",
+          "rdfs:label": "Region D",
+          "lio:shows": {
+            "@id": "doc:person-instance-1"
+          },
+          "oa:hasSelector": {
+            "@type": "oa:SvgSelector",
+            "rdf:value": "<svg xmlns=\"http://www.w3.org/2000/svg\"><polygon points=\"212,239 222,246 230,265 234,295 233,335 231,388 228,398 202,398 200,388 205,345 200,285 202,268 204,248\"/></svg>"
+          }
+        },
+        {
+          "@id": "doc:region-e",
+          "rdfs:label": "Region E",
+          "lio:shows": {
+            "@id": "doc:person-instance-2"
+          },
+          "oa:hasSelector": {
+            "@type": "oa:SvgSelector",
+            "rdf:value": "<svg xmlns=\"http://www.w3.org/2000/svg\"><polygon points=\"250,250 259,255 268,272 271,305 268,340 260,385 235,388 239,345 230,310 228,275 242,258\"/></svg>"
+          }
+        },
+        {
+          "@id": "doc:region-f",
+          "rdfs:label": "Region F",
+          "lio:shows": {
+            "@id": "doc:person-instance-3"
+          },
+          "oa:hasSelector": {
+            "@type": "oa:SvgSelector",
+            "rdf:value": "<svg xmlns=\"http://www.w3.org/2000/svg\"><polygon points=\"302,242 315,245 318,258 326,268 328,300 321,335 321,399 292,399 294,350 286,320 286,270 298,250\"/></svg>"
+          }
+        },
+        {
+          "@id": "doc:region-g",
+          "rdfs:label": "Region G",
+          "lio:shows": {
+            "@id": "doc:person-instance-4"
+          },
+          "oa:hasSelector": {
+            "@type": "oa:SvgSelector",
+            "rdf:value": "<svg xmlns=\"http://www.w3.org/2000/svg\"><polygon points=\"424,245 440,245 448,262 468,275 479,288 478,320 468,350 465,385 475,420 486,449 474,456 459,440 450,410 440,385 430,385 415,420 402,446 394,448 400,410 408,370 402,345 402,315 412,280 420,265\"/></svg>"
+          }
+        },
+        {
+          "@id": "doc:region-h",
+          "rdfs:label": "Region H",
+          "lio:shows": {
+            "@id": "doc:person-instance-5"
+          },
+          "oa:hasSelector": {
+            "@type": "oa:SvgSelector",
+            "rdf:value": "<svg xmlns=\"http://www.w3.org/2000/svg\"><polygon points=\"578,239 590,234 602,238 610,249 625,242 614,268 619,305 628,335 632,351 616,346 608,365 605,390 605,425 598,430 588,428 580,415 575,385 568,355 564,340 564,320 552,322 541,330 532,330 530,324 536,319 548,312 559,295 570,270 575,260\"/></svg>"
+          }
+        },
+        {
+          "@id": "doc:region-i",
+          "rdfs:label": "Region I",
+          "lio:shows": {
+            "@id": "doc:person-instance-6"
+          },
+          "oa:hasSelector": {
+            "@type": "oa:SvgSelector",
+            "rdf:value": "<svg xmlns=\"http://www.w3.org/2000/svg\"><polygon points=\"702,249 715,248 722,258 730,268 739,282 736,295 728,295 725,322 724,350 719,385 714,402 700,406 695,395 688,380 685,350 678,340 672,335 675,320 680,300 685,275 695,268 699,258\"/></svg>"
+          }
+        },
+        {
+          "@id": "doc:region-j",
+          "rdfs:label": "Region J",
+          "lio:shows": {
+            "@id": "http://www.wikidata.org/entity/Q44440"
+          },
+          "oa:hasSelector": {
+            "@type": "oa:SvgSelector",
+            "rdf:value": "<svg xmlns=\"http://www.w3.org/2000/svg\"><polygon points=\"622,264 766,264 768,232 776,232 778,265 850,265 882,270 882,287 850,287 830,286 778,284 766,284 750,274 622,274\"/></svg>"
+          }
+        },
+        {
+          "@id": "doc:region-l",
+          "rdfs:label": "Region L",
+          "lio:shows": {
+            "@id": "doc:rock-instance-2"
+          },
+          "oa:hasSelector": {
+            "@type": "oa:FragmentSelector",
+            "dcterms:conformsTo": {
+              "@id": "http://www.w3.org/TR/media-frags/"
+            },
+            "rdf:value": "xywh=pixel:356,616,44,44"
+          }
+        },
+        {
+          "@id": "doc:region-m",
+          "rdfs:label": "Region M",
+          "lio:shows": {
+            "@id": "doc:animal-instance-1"
+          },
+          "schema:position": 50,
+          "oa:hasSelector": {
+            "@type": "oa:SvgSelector",
+            "rdf:value": "<svg xmlns=\"http://www.w3.org/2000/svg\"><polygon points=\"616,347 632,344 642,350 651,364 647,376 640,385 628,386 621,384 618,372 617,358\"/></svg>"
+          }
+        },
+        {
+          "@id": "doc:region-n",
+          "rdfs:label": "Region N",
+          "lio:shows": {
+            "@id": "doc:organization-instance-1"
+          },
+          "oa:hasSelector": {
+            "@type": "oa:FragmentSelector",
+            "dcterms:conformsTo": {
+              "@id": "http://www.w3.org/TR/media-frags/"
+            },
+            "rdf:value": "xywh=pixel:192,226,549,232"
+          },
+          "schema:position": 101
+        },
+        {
+          "@id": "doc:boat-instance-1",
+          "@type": "http://dbpedia.org/resource/Boat",
+          "rdfs:label": "Unidentified Boat 1"
+        },
+        {
+          "@id": "doc:boat-instance-2",
+          "@type": "http://dbpedia.org/resource/Boat",
+          "rdfs:label": "Unidentified Boat 2"
+        },
+        {
+          "@id": "doc:animal-instance-1",
+          "@type": "http://dbpedia.org/resource/Dog",
+          "rdfs:label": "Unidentified Dog 1"
+        },
+        {
+          "@id": "doc:rock-instance-1",
+          "@type": "http://www.wikidata.org/entity/Q8063",
+          "rdfs:label": "Unidentified Rock 1"
+        },
+        {
+          "@id": "doc:rock-instance-2",
+          "@type": "http://www.wikidata.org/entity/Q8063",
+          "rdfs:label": "Unidentified Rock 2"
+        },
+        {
+          "@id": "doc:person-instance-1",
+          "@type": "schema:Person",
+          "schema:name": "Joaquin Vanschoren",
+          "schema:identifier": {
+            "@type": "schema:PropertyValue",
+            "schema:propertyID": "ORCID",
+            "schema:value": "0000-0001-7044-9805"
+          },
+          "owl:sameAs": {
+            "@id": "https://orcid.org/0000-0001-7044-9805"
+          }
+        },
+        {
+          "@id": "doc:person-instance-2",
+          "@type": "schema:Person",
+          "schema:name": "David Ayman Shamma",
+          "schema:identifier": {
+            "@type": "schema:PropertyValue",
+            "schema:propertyID": "ORCID",
+            "schema:value": "0000-0003-2399-9374"
+          },
+          "owl:sameAs": {
+            "@id": "https://orcid.org/0000-0003-2399-9374"
+          }
+        },
+        {
+          "@id": "doc:person-instance-3",
+          "@type": "schema:Person",
+          "schema:name": "Patrick J. Hayes",
+          "schema:identifier": {
+            "@type": "schema:PropertyValue",
+            "schema:propertyID": "ORCID",
+            "schema:value": "0000-0002-6639-9187"
+          },
+          "owl:sameAs": {
+            "@id": "https://orcid.org/0000-0002-6639-9187"
+          }
+        },
+        {
+          "@id": "doc:person-instance-4",
+          "@type": "schema:Person",
+          "schema:name": "Adina Williams",
+          "schema:identifier": {
+            "@type": "schema:PropertyValue",
+            "schema:propertyID": "ORCID",
+            "schema:value": "0000-0001-5281-3343"
+          },
+          "owl:sameAs": {
+            "@id": "https://orcid.org/0000-0001-5281-3343"
+          }
+        },
+        {
+          "@id": "doc:person-instance-5",
+          "@type": "schema:Person",
+          "schema:name": "Hannah Rose Kirk",
+          "schema:identifier": {
+            "@type": "schema:PropertyValue",
+            "schema:propertyID": "ORCID",
+            "schema:value": "0000-0002-7419-5993"
+          },
+          "owl:sameAs": {
+            "@id": "https://orcid.org/0000-0002-7419-5993"
+          },
+          "schema:owns": {
+            "@id": "doc:animal-instance-1"
+          }
+        },
+        {
+          "@id": "doc:person-instance-6",
+          "@type": "schema:Person",
+          "schema:name": "Oana Inel",
+          "schema:identifier": {
+            "@type": "schema:PropertyValue",
+            "schema:propertyID": "ORCID",
+            "schema:value": "0000-0003-4691-6586"
+          },
+          "owl:sameAs": {
+            "@id": "https://orcid.org/0000-0003-4691-6586"
+          }
+        },
+        {
+          "@id": "doc:organization-instance-1",
+          "@type": "schema:Organization",
+          "schema:name": "Friends",
+          "schema:member": [
+            {
+              "@id": "doc:person-instance-1"
+            },
+            {
+              "@id": "doc:person-instance-2"
+            },
+            {
+              "@id": "doc:person-instance-3"
+            },
+            {
+              "@id": "doc:person-instance-4"
+            },
+            {
+              "@id": "doc:person-instance-5"
+            },
+            {
+              "@id": "doc:person-instance-6"
+            }
+          ]
+        }
+      ]
     },
     {
       "@id": "http://cv.iptc.org/newscodes/digitalsourcetype/digitalCapture",
