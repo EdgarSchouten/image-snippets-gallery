@@ -1055,6 +1055,8 @@ function isgal_lightbox_item( array $row, array $a, $title, $alt, $source ) {
 		'dateSource' => $a['lightboxDetails'] ? $date['source'] : '',
 		'rights'     => $a['lightboxDetails'] ? (string) $row['rights'] : '',
 		'page'       => $a['lightboxDetails'] ? esc_url_raw( $row['page'] ) : '',
+		// Where the image opens as a Linked Document; offered with the flip.
+		'ld'         => ! empty( $a['lightboxFlip'] ) ? esc_url_raw( isgal_ld_url( $row['page'] ) ) : '',
 	);
 }
 
@@ -1076,7 +1078,7 @@ function isgal_lightbox_html( $flip = false ) {
 				<div class="isgal-flip">
 					<div class="isgal-flip__inner">
 						<div class="isgal-flip__front">
-							<img class="isgal-lightbox__img" data-wp-watch="callbacks.watchImage" data-wp-on--load="actions.loaded" data-wp-on--error="actions.loaded"<?php echo $flip ? ' data-wp-on--click="actions.flip"' : ''; ?> data-wp-bind--src="state.current.src" data-wp-bind--srcset="state.current.srcset" data-wp-bind--alt="state.current.alt" sizes="100vw" decoding="async" />
+							<img class="isgal-lightbox__img" data-wp-watch="callbacks.watchImage" data-wp-on--load="actions.loaded" data-wp-on--error="actions.loaded"<?php echo $flip ? ' data-wp-on--click="actions.flip" data-wp-on--dblclick="actions.openLinked"' : ''; ?> data-wp-bind--src="state.current.src" data-wp-bind--srcset="state.current.srcset" data-wp-bind--alt="state.current.alt" sizes="100vw" decoding="async" />
 							<span class="isgal-lightbox__spinner" aria-hidden="true"></span>
 						</div>
 						<?php if ( $flip ) : // The back of the photograph: the image's whole graph over a ghost of the image, as ImageSnippets shows it. ?>
@@ -1108,6 +1110,7 @@ function isgal_lightbox_html( $flip = false ) {
 				<figcaption class="isgal-lightbox__caption">
 					<?php if ( $flip ) : ?>
 					<button type="button" class="isgal-lightbox__flip" data-wp-on--click="actions.flip" data-wp-bind--aria-pressed="context.flipped" aria-pressed="false"><span aria-hidden="true">&#x21C4;</span> <span data-wp-text="state.flipLabel"><?php esc_html_e( 'Flip to see the metadata', 'image-snippets-gallery' ); ?></span></button>
+					<a class="isgal-lightbox__ld" data-wp-bind--href="state.current.ld" data-wp-bind--hidden="!state.current.ld" target="_blank" rel="noopener" title="<?php esc_attr_e( 'Double-click the image, or press L', 'image-snippets-gallery' ); ?>"><span aria-hidden="true">&#x1F517;</span> <?php esc_html_e( 'Open as Linked Document', 'image-snippets-gallery' ); ?></a>
 					<?php endif; ?>
 					<span class="isgal-lightbox__title" data-wp-text="state.current.title"></span>
 					<span class="isgal-lightbox__count" data-wp-text="state.position" data-wp-bind--hidden="!state.hasMany"></span>

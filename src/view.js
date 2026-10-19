@@ -288,6 +288,16 @@ const { state, actions } = store( 'imagesnippets/gallery', {
 			}
 			ctx.flipped = ! ctx.flipped;
 		},
+		// Open the image as a Linked Document (an HTML canvas with its JSON-LD
+		// graph) in a new tab. A double-click on the image gets here; the link
+		// beside the flip button and the L key are the same thing for everyone
+		// who is not holding a mouse.
+		openLinked() {
+			const url = state.current.ld;
+			if ( url ) {
+				window.open( url, '_blank', 'noopener' );
+			}
+		},
 		// A click anywhere on the back that is not a link, and is not the end of
 		// a text selection, turns the image face up again.
 		flipBack( event ) {
@@ -411,6 +421,8 @@ const { state, actions } = store( 'imagesnippets/gallery', {
 				actions.prev();
 			} else if ( 'f' === event.key && ctx.canFlip ) {
 				actions.flip();
+			} else if ( 'l' === event.key && ctx.canFlip ) {
+				actions.openLinked();
 			}
 		},
 		backdrop( event ) {

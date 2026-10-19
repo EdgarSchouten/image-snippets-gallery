@@ -724,7 +724,8 @@
 			animation: isgal-spin 0.8s linear infinite, isgal-reveal 0s 0.25s forwards;
 		}
 
-		&__flip {
+		&__flip,
+		&__ld {
 			display: inline-flex;
 			align-items: center;
 			gap: 0.4em;
@@ -741,6 +742,17 @@
 			&:hover,
 			&:focus-visible {
 				background: rgba( 255, 255, 255, 0.28 );
+			}
+		}
+
+		// The link is a sibling of the flip button, and an inline-flex box
+		// would otherwise win over its [hidden].
+		&__ld {
+			margin-left: 0.4rem;
+			text-decoration: none;
+
+			&[hidden] {
+				display: none;
 			}
 		}
 
