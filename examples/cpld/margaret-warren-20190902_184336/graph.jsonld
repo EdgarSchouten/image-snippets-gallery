@@ -1,0 +1,743 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "bf": "http://id.loc.gov/ontologies/bibframe/",
+    "lio": "https://w3id.org/lio/v1#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "oa": "http://www.w3.org/ns/oa#",
+    "photoshop": "http://ns.adobe.com/photoshop/1.0/",
+    "plus": "http://ns.useplus.org/ldf/xmp/1.0/",
+    "iptc4xmpext": "http://iptc.org/std/Iptc4xmpExt/2008-02-29/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "edm": "https://data.elsevier.com/schema/edm/",
+    "idtype": "https://data.elsevier.com/schema/idtype/",
+    "nas": "https://data.elsevier.com/publishing/schema/nas/",
+    "doc": "https://imagesnippets.com/imgtag/images/info@margaretwarren.us/20190902_184336.html#"
+  },
+  "@graph": [
+    {
+      "@id": "https://imagesnippets.com/imgtag/images/info@margaretwarren.us/20190902_184336.html",
+      "@type": "schema:WebPage",
+      "schema:name": "Labyrinth",
+      "schema:mainEntity": {
+        "@id": "doc:artwork-184336"
+      },
+      "schema:hasPart": [
+        {
+          "@id": "doc:title"
+        },
+        {
+          "@id": "doc:canvas"
+        },
+        {
+          "@id": "doc:region-a"
+        },
+        {
+          "@id": "doc:region-b"
+        },
+        {
+          "@id": "doc:region-c"
+        },
+        {
+          "@id": "doc:region-d"
+        },
+        {
+          "@id": "doc:region-e"
+        },
+        {
+          "@id": "doc:region-f"
+        },
+        {
+          "@id": "doc:region-g"
+        },
+        {
+          "@id": "doc:region-h"
+        },
+        {
+          "@id": "doc:region-i"
+        },
+        {
+          "@id": "doc:region-j"
+        },
+        {
+          "@id": "doc:region-l"
+        },
+        {
+          "@id": "doc:region-m"
+        },
+        {
+          "@id": "doc:caption"
+        },
+        {
+          "@id": "doc:creator"
+        },
+        {
+          "@id": "doc:region-n"
+        }
+      ]
+    },
+    {
+      "@id": "doc:title",
+      "@type": "nas:Title"
+    },
+    {
+      "@id": "doc:creator",
+      "@type": "nas:AuthorName",
+      "schema:mentions": {
+        "@id": "doc:person-c"
+      }
+    },
+    {
+      "@id": "doc:credit",
+      "@type": "nas:Byline",
+      "schema:mentions": [
+        {
+          "@id": "doc:person-c"
+        }
+      ]
+    },
+    {
+      "@id": "doc:caption",
+      "schema:mentions": [
+        {
+          "@id": "http://www.wikidata.org/entity/Q6484999"
+        }
+      ]
+    },
+    {
+      "@id": "doc:artwork-184336",
+      "@type": "schema:CreativeWork",
+      "schema:name": {
+        "@value": "Labyrinth",
+        "@language": "en"
+      },
+      "schema:keywords": {
+        "@value": "lands end, labyrinth, people",
+        "@language": "en"
+      },
+      "schema:descripption": {
+        "@type": "rdf:HTML",
+        "@value": "<p>A group of friends walking the Labyrinth at Lands End Park on a sunny day in San Francisco. The image could convey the concept that solving problems can be light and carefree.</p><p>Here is the LIO description of this image:</p><p><b>depicts:</b> people walking a stone labyrinth</p><p><b>shows:</b> rocks arranged in spiral/labyrinth pattern, San Francisco Bay, cargo ship, mountains, clear blue sky, a dog</p><p><b>hasSetting:</b> Land's End, San Francisco, California, USA; daytime, outdoor coastal environment</p><p><b>hasInForeground:</b> stone labyrinth pathway made of rounded rocks arranged in concentric spiral patterns on sandy/gravelly ground</p><p><b>hasInBackground:</b> Golden Gate Bridge, Marin Headlands, San Francisco Bay, red cargo ship on water</p><p><b>hasDepictedBackground:</b> San Francisco Bay with blue water, mountains, and clear sky filling the entire background scene</p><p><b>conveys:</b> mindfulness, contemplation, peaceful exploration, spiritual practice, connection with nature, meditative journey</p><p><b>artisticElement:</b></p><ul><li><b>line:</b> curved, concentric lines formed by stone arrangements creating strong visual rhythm</li><li><b>color:</b> warm earth tones of sand and rock contrasting with vivid blue of sky and water; pink jacket providing a focal color accent</li><li><b>texture:</b> rough, natural textures of rounded stones against sandy ground</li><li><b>composition:</b> leading lines of the labyrinth draw the eye toward the figures and background</li><li><b>scale:</b> human figures provide scale reference against the vast bay and bridge</li></ul><p><b>looksLike:</b> the stone arrangement looksLike a mandala or ancient ceremonial site</p>"
+      },
+      "schema:creditText": "Margaret Warren",
+      "schema:creator": {
+        "@id": "doc:person-c"
+      },
+      "schema:copyrightNotice": "Copyright 2020 Margaret Warren",
+      "schema:license": {
+        "@id": "https://creativecommons.org/licenses/by-nc-nd/4.0"
+      },
+      "lio:hasTag": [
+        {
+          "@value": "labyrinth",
+          "@language": "en"
+        },
+        {
+          "@value": "people",
+          "@language": "en"
+        },
+        {
+          "@value": "lands end",
+          "@language": "en"
+        }
+      ],
+      "lio:depicts": {
+        "@id": "http://vocab.getty.edu/aat/300312218"
+      },
+      "lio:shows": [
+        {
+          "@id": "https://en-word.net/synset/15043597-n"
+        },
+        {
+          "@id": "http://www.wikidata.org/entity/Q8063"
+        }
+      ],
+      "lio:hasSetting": {
+        "@id": "http://www.wikidata.org/entity/Q6484999"
+      },
+      "lio:hasSceneLocation": {
+        "@id": "http://sws.geonames.org/5391959/"
+      },
+      "lio:hasInBackground": [
+        {
+          "@id": "http://dbpedia.org/resource/Marin_Headlands"
+        },
+        {
+          "@id": "http://dbpedia.org/resource/Golden_Gate_Bridge"
+        },
+        {
+          "@id": "http://dbpedia.org/resource/Pacific_Ocean"
+        }
+      ],
+      "lio:conveys": [
+        {
+          "@id": "http://w3id.org/tate-skos#f6eec909cf0a4e878652108ce1986cb5"
+        },
+        {
+          "@id": "http://www.wikidata.org/entity/Q341045"
+        }
+      ],
+      "lio:technique": [
+        {
+          "@id": "http://dbpedia.org/resource/Installation_art"
+        },
+        {
+          "@id": "http://dbpedia.org/resource/Color_photography"
+        }
+      ],
+      "lio:isIn": [
+        {
+          "@id": "https://imagesnippets.com/imgtag/datasets/Imagesnippets/bringyourimage"
+        },
+        {
+          "@id": "https://imagesnippets.com/imgtag/datasets/Imagesnippets/mmeditorial"
+        }
+      ],
+      "schema:mentions": [
+        {
+          "@id": "https://en-word.net/synset/15043597-n"
+        },
+        {
+          "@id": "http://www.wikidata.org/entity/Q44440"
+        }
+      ],
+      "photoshop:DateCreated": "2019-09-02",
+      "plus:DataMining": {
+        "@id": "http://ns.useplus.org/ldf/vocab/DMI-PROHIBITED-EXCEPTSEARCHENGINEINDEXING"
+      },
+      "iptc4xmpext:DigitalSourceType": {
+        "@id": "http://cv.iptc.org/newscodes/digitalsourcetype/digitalCapture"
+      },
+      "bf:hasInstance": {
+        "@id": "doc:imagesnippets-artwork-184336"
+      }
+    },
+    {
+      "@id": "doc:imagesnippets-artwork-184336",
+      "@type": [
+        "schema:ImageObject",
+        "lio:Image"
+      ],
+      "schema:contentUrl": {
+        "@id": "https://imagesnippets.com/imgtag/images/info@margaretwarren.us/20190902_184336.jpg"
+      },
+      "schema:thumbnail": {
+        "@id": "https://imagesnippets.com/imgtag/images/info@margaretwarren.us/thumbnails/20190902_184336.jpg"
+      },
+      "schema:width": 1016,
+      "schema:height": 762
+    },
+    {
+      "@id": "doc:canvas",
+      "@type": "nas:Figure",
+      "edm:renditionOf": {
+        "@id": "doc:artwork-184336"
+      }
+    },
+    {
+      "@id": "doc:region-a",
+      "rdfs:label": "Region A",
+      "lio:shows": {
+        "@id": "doc:boat-instance-1"
+      },
+      "oa:hasSelector": {
+        "@type": "oa:FragmentSelector",
+        "dcterms:conformsTo": {
+          "@id": "http://www.w3.org/TR/media-frags/"
+        },
+        "rdf:value": "xywh=pixel:144,252,146,30"
+      }
+    },
+    {
+      "@id": "doc:region-b",
+      "rdfs:label": "Region B",
+      "lio:shows": {
+        "@id": "doc:boat-instance-2"
+      },
+      "oa:hasSelector": {
+        "@type": "oa:FragmentSelector",
+        "dcterms:conformsTo": {
+          "@id": "http://www.w3.org/TR/media-frags/"
+        },
+        "rdf:value": "xywh=pixel:526,270,35,11"
+      }
+    },
+    {
+      "@id": "doc:region-c",
+      "rdfs:label": "Region C",
+      "lio:shows": {
+        "@id": "doc:rock-instance-1"
+      },
+      "oa:hasSelector": {
+        "@type": "oa:FragmentSelector",
+        "dcterms:conformsTo": {
+          "@id": "http://www.w3.org/TR/media-frags/"
+        },
+        "rdf:value": "xywh=pixel:274,604,58,48"
+      }
+    },
+    {
+      "@id": "doc:region-d",
+      "rdfs:label": "Region D",
+      "lio:shows": {
+        "@id": "doc:person-instance-1"
+      },
+      "oa:hasSelector": {
+        "@type": "oa:SvgSelector",
+        "rdf:value": "<svg xmlns=\"http://www.w3.org/2000/svg\"><polygon points=\"212,239 222,246 230,265 234,295 233,335 231,388 228,398 202,398 200,388 205,345 200,285 202,268 204,248\"/></svg>"
+      }
+    },
+    {
+      "@id": "doc:region-e",
+      "rdfs:label": "Region E",
+      "lio:shows": {
+        "@id": "doc:person-instance-2"
+      },
+      "oa:hasSelector": {
+        "@type": "oa:SvgSelector",
+        "rdf:value": "<svg xmlns=\"http://www.w3.org/2000/svg\"><polygon points=\"250,250 259,255 268,272 271,305 268,340 260,385 235,388 239,345 230,310 228,275 242,258\"/></svg>"
+      }
+    },
+    {
+      "@id": "doc:region-f",
+      "rdfs:label": "Region F",
+      "lio:shows": {
+        "@id": "doc:person-instance-3"
+      },
+      "oa:hasSelector": {
+        "@type": "oa:SvgSelector",
+        "rdf:value": "<svg xmlns=\"http://www.w3.org/2000/svg\"><polygon points=\"302,242 315,245 318,258 326,268 328,300 321,335 321,399 292,399 294,350 286,320 286,270 298,250\"/></svg>"
+      }
+    },
+    {
+      "@id": "doc:region-g",
+      "rdfs:label": "Region G",
+      "lio:shows": {
+        "@id": "doc:person-instance-4"
+      },
+      "oa:hasSelector": {
+        "@type": "oa:SvgSelector",
+        "rdf:value": "<svg xmlns=\"http://www.w3.org/2000/svg\"><polygon points=\"424,245 440,245 448,262 468,275 479,288 478,320 468,350 465,385 475,420 486,449 474,456 459,440 450,410 440,385 430,385 415,420 402,446 394,448 400,410 408,370 402,345 402,315 412,280 420,265\"/></svg>"
+      }
+    },
+    {
+      "@id": "doc:region-h",
+      "rdfs:label": "Region H",
+      "lio:shows": {
+        "@id": "doc:person-instance-5"
+      },
+      "oa:hasSelector": {
+        "@type": "oa:SvgSelector",
+        "rdf:value": "<svg xmlns=\"http://www.w3.org/2000/svg\"><polygon points=\"578,239 590,234 602,238 610,249 625,242 614,268 619,305 628,335 632,351 616,346 608,365 605,390 605,425 598,430 588,428 580,415 575,385 568,355 564,340 564,320 552,322 541,330 532,330 530,324 536,319 548,312 559,295 570,270 575,260\"/></svg>"
+      }
+    },
+    {
+      "@id": "doc:region-i",
+      "rdfs:label": "Region I",
+      "lio:shows": {
+        "@id": "doc:person-instance-6"
+      },
+      "oa:hasSelector": {
+        "@type": "oa:SvgSelector",
+        "rdf:value": "<svg xmlns=\"http://www.w3.org/2000/svg\"><polygon points=\"702,249 715,248 722,258 730,268 739,282 736,295 728,295 725,322 724,350 719,385 714,402 700,406 695,395 688,380 685,350 678,340 672,335 675,320 680,300 685,275 695,268 699,258\"/></svg>"
+      }
+    },
+    {
+      "@id": "doc:region-j",
+      "rdfs:label": "Region J",
+      "lio:shows": {
+        "@id": "http://www.wikidata.org/entity/Q44440"
+      },
+      "oa:hasSelector": {
+        "@type": "oa:SvgSelector",
+        "rdf:value": "<svg xmlns=\"http://www.w3.org/2000/svg\"><polygon points=\"622,264 766,264 768,232 776,232 778,265 850,265 882,270 882,287 850,287 830,286 778,284 766,284 750,274 622,274\"/></svg>"
+      }
+    },
+    {
+      "@id": "doc:region-l",
+      "rdfs:label": "Region L",
+      "lio:shows": {
+        "@id": "doc:rock-instance-2"
+      },
+      "oa:hasSelector": {
+        "@type": "oa:FragmentSelector",
+        "dcterms:conformsTo": {
+          "@id": "http://www.w3.org/TR/media-frags/"
+        },
+        "rdf:value": "xywh=pixel:356,616,44,44"
+      }
+    },
+    {
+      "@id": "doc:region-m",
+      "rdfs:label": "Region M",
+      "lio:shows": {
+        "@id": "doc:animal-instance-1"
+      },
+      "schema:position": 50,
+      "oa:hasSelector": {
+        "@type": "oa:SvgSelector",
+        "rdf:value": "<svg xmlns=\"http://www.w3.org/2000/svg\"><polygon points=\"616,347 632,344 642,350 651,364 647,376 640,385 628,386 621,384 618,372 617,358\"/></svg>"
+      }
+    },
+    {
+      "@id": "doc:region-n",
+      "rdfs:label": "Region N",
+      "lio:shows": {
+        "@id": "doc:organization-instance-1"
+      },
+      "oa:hasSelector": {
+        "@type": "oa:FragmentSelector",
+        "dcterms:conformsTo": {
+          "@id": "http://www.w3.org/TR/media-frags/"
+        },
+        "rdf:value": "xywh=pixel:192,226,549,232"
+      },
+      "schema:position": 101
+    },
+    {
+      "@id": "doc:boat-instance-1",
+      "@type": "http://dbpedia.org/resource/Boat",
+      "rdfs:label": "Unidentified Boat 1"
+    },
+    {
+      "@id": "doc:boat-instance-2",
+      "@type": "http://dbpedia.org/resource/Boat",
+      "rdfs:label": "Unidentified Boat 2"
+    },
+    {
+      "@id": "doc:animal-instance-1",
+      "@type": "http://dbpedia.org/resource/Dog",
+      "rdfs:label": "Unidentified Dog 1"
+    },
+    {
+      "@id": "doc:rock-instance-1",
+      "@type": "http://www.wikidata.org/entity/Q8063",
+      "rdfs:label": "Unidentified Rock 1"
+    },
+    {
+      "@id": "doc:rock-instance-2",
+      "@type": "http://www.wikidata.org/entity/Q8063",
+      "rdfs:label": "Unidentified Rock 2"
+    },
+    {
+      "@id": "doc:person-instance-1",
+      "@type": "schema:Person",
+      "schema:name": "Joaquin Vanschoren",
+      "schema:identifier": {
+        "@type": "schema:PropertyValue",
+        "schema:propertyID": "ORCID",
+        "schema:value": "0000-0001-7044-9805"
+      },
+      "owl:sameAs": {
+        "@id": "https://orcid.org/0000-0001-7044-9805"
+      }
+    },
+    {
+      "@id": "doc:person-instance-2",
+      "@type": "schema:Person",
+      "schema:name": "David Ayman Shamma",
+      "schema:identifier": {
+        "@type": "schema:PropertyValue",
+        "schema:propertyID": "ORCID",
+        "schema:value": "0000-0003-2399-9374"
+      },
+      "owl:sameAs": {
+        "@id": "https://orcid.org/0000-0003-2399-9374"
+      }
+    },
+    {
+      "@id": "doc:person-instance-3",
+      "@type": "schema:Person",
+      "schema:name": "Patrick J. Hayes",
+      "schema:identifier": {
+        "@type": "schema:PropertyValue",
+        "schema:propertyID": "ORCID",
+        "schema:value": "0000-0002-6639-9187"
+      },
+      "owl:sameAs": {
+        "@id": "https://orcid.org/0000-0002-6639-9187"
+      }
+    },
+    {
+      "@id": "doc:person-instance-4",
+      "@type": "schema:Person",
+      "schema:name": "Adina Williams",
+      "schema:identifier": {
+        "@type": "schema:PropertyValue",
+        "schema:propertyID": "ORCID",
+        "schema:value": "0000-0001-5281-3343"
+      },
+      "owl:sameAs": {
+        "@id": "https://orcid.org/0000-0001-5281-3343"
+      }
+    },
+    {
+      "@id": "doc:person-instance-5",
+      "@type": "schema:Person",
+      "schema:name": "Hannah Rose Kirk",
+      "schema:identifier": {
+        "@type": "schema:PropertyValue",
+        "schema:propertyID": "ORCID",
+        "schema:value": "0000-0002-7419-5993"
+      },
+      "owl:sameAs": {
+        "@id": "https://orcid.org/0000-0002-7419-5993"
+      },
+      "schema:owns": {
+        "@id": "doc:animal-instance-1"
+      }
+    },
+    {
+      "@id": "doc:person-instance-6",
+      "@type": "schema:Person",
+      "schema:name": "Oana Inel",
+      "schema:identifier": {
+        "@type": "schema:PropertyValue",
+        "schema:propertyID": "ORCID",
+        "schema:value": "0000-0003-4691-6586"
+      },
+      "owl:sameAs": {
+        "@id": "https://orcid.org/0000-0003-4691-6586"
+      }
+    },
+    {
+      "@id": "doc:organization-instance-1",
+      "@type": "schema:Organization",
+      "schema:name": "Friends",
+      "schema:member": [
+        {
+          "@id": "doc:person-instance-1"
+        },
+        {
+          "@id": "doc:person-instance-2"
+        },
+        {
+          "@id": "doc:person-instance-3"
+        },
+        {
+          "@id": "doc:person-instance-4"
+        },
+        {
+          "@id": "doc:person-instance-5"
+        },
+        {
+          "@id": "doc:person-instance-6"
+        }
+      ]
+    },
+    {
+      "@id": "doc:person-c",
+      "@type": "schema:Person",
+      "schema:name": "Margaret Warren",
+      "schema:url": {
+        "@id": "http://www.margaretwarren.us"
+      },
+      "schema:identifier": {
+        "@type": "schema:PropertyValue",
+        "schema:propertyID": "ORCID",
+        "schema:value": "0000-0002-4248-300X"
+      }
+    },
+    {
+      "@id": "http://cv.iptc.org/newscodes/digitalsourcetype/digitalCapture",
+      "rdfs:label": {
+        "@value": "Digital Capture",
+        "@language": "en"
+      }
+    },
+    {
+      "@id": "http://dbpedia.org/resource/Boat",
+      "rdfs:label": {
+        "@value": "boat",
+        "@language": "en"
+      },
+      "schema:mainEntityOfPage": {
+        "@id": "http://dbpedia.org/page/Boat"
+      }
+    },
+    {
+      "@id": "http://dbpedia.org/resource/Color_photography",
+      "rdfs:label": {
+        "@value": "Color photography",
+        "@language": "en"
+      },
+      "schema:mainEntityOfPage": {
+        "@id": "http://dbpedia.org/page/Color_photography"
+      }
+    },
+    {
+      "@id": "http://dbpedia.org/resource/Golden_Gate_Bridge",
+      "rdfs:label": {
+        "@value": "Golden Gate Bridge",
+        "@language": "en"
+      },
+      "schema:mainEntityOfPage": {
+        "@id": "http://dbpedia.org/page/Golden_Gate_Bridge"
+      }
+    },
+    {
+      "@id": "http://dbpedia.org/resource/Dog",
+      "rdfs:label": {
+        "@value": "Dog",
+        "@language": "en"
+      },
+      "schema:mainEntityOfPage": {
+        "@id": "http://dbpedia.org/page/Dog"
+      }
+    },
+    {
+      "@id": "http://dbpedia.org/resource/Installation_art",
+      "rdfs:label": {
+        "@value": "Installation art",
+        "@language": "en"
+      },
+      "schema:mainEntityOfPage": {
+        "@id": "http://dbpedia.org/page/Installation_art"
+      }
+    },
+    {
+      "@id": "http://dbpedia.org/resource/Marin_Headlands",
+      "rdfs:label": {
+        "@value": "Marin Headlands",
+        "@language": "en"
+      },
+      "schema:mainEntityOfPage": {
+        "@id": "http://dbpedia.org/page/Marin_Headlands"
+      }
+    },
+    {
+      "@id": "http://schema.org/Person",
+      "rdfs:label": {
+        "@value": "Person",
+        "@language": "en"
+      }
+    },
+    {
+      "@id": "http://dbpedia.org/resource/Pacific_Ocean",
+      "rdfs:label": {
+        "@value": "Pacific Ocean",
+        "@language": "en"
+      },
+      "schema:mainEntityOfPage": {
+        "@id": "http://dbpedia.org/page/Pacific_Ocean"
+      }
+    },
+    {
+      "@id": "http://ns.useplus.org/ldf/vocab/DMI-PROHIBITED-EXCEPTSEARCHENGINEINDEXING",
+      "rdfs:label": {
+        "@value": "Prohibited except for search engine indexing",
+        "@language": "en"
+      }
+    },
+    {
+      "@id": "http://sws.geonames.org/5391959/",
+      "rdfs:label": {
+        "@value": "San Francisco, California",
+        "@language": "en"
+      },
+      "schema:mainEntityOfPage": {
+        "@id": "https://www.geonames.org/5391959"
+      }
+    },
+    {
+      "@id": "http://vocab.getty.edu/aat/300312218",
+      "rdfs:label": {
+        "@value": "Labyrinth",
+        "@language": "en"
+      },
+      "schema:mainEntityOfPage": {
+        "@id": "http://vocab.getty.edu/page/aat/300312218"
+      }
+    },
+    {
+      "@id": "http://w3id.org/tate-skos#f6eec909cf0a4e878652108ce1986cb5",
+      "rdfs:label": {
+        "@value": "ritual",
+        "@language": "en"
+      }
+    },
+    {
+      "@id": "http://wordnet-rdf.princeton.edu/id/00154629-n",
+      "rdfs:label": {
+        "@value": "solving puzzles",
+        "@language": "en"
+      }
+    },
+    {
+      "@id": "http://www.wikidata.org/entity/Q8063",
+      "rdfs:label": [
+        {
+          "@value": "rocks",
+          "@language": "en"
+        },
+        {
+          "@value": "rock",
+          "@language": "en"
+        }
+      ],
+      "schema:mainEntityOfPage": {
+        "@id": "https://www.wikidata.org/wiki/Q8063"
+      }
+    },
+    {
+      "@id": "http://www.wikidata.org/entity/Q44440",
+      "@type": "schema:Bridge",
+      "owl:sameAs": {
+        "@id": "http://dbpedia.org/resource/Golden_Gate_Bridge"
+      },
+      "rdfs:label": {
+        "@value": "Golden Gate Bridge",
+        "@language": "en"
+      },
+      "schema:mainEntityOfPage": {
+        "@id": "https://www.wikidata.org/wiki/Q44440"
+      }
+    },
+    {
+      "@id": "https://en-word.net/synset/15043597-n",
+      "rdfs:label": {
+        "@value": "sand",
+        "@language": "en"
+      },
+      "schema:mainEntityOfPage": {
+        "@id": "https://en-word.net/view/synset/15043597-n"
+      }
+    },
+    {
+      "@id": "http://www.wikidata.org/entity/Q341045",
+      "rdfs:label": {
+        "@value": "mindfulness",
+        "@language": "en"
+      },
+      "schema:mainEntityOfPage": {
+        "@id": "https://www.wikidata.org/wiki/Q341045"
+      }
+    },
+    {
+      "@id": "http://www.wikidata.org/entity/Q6484999",
+      "rdfs:label": {
+        "@value": "lands end",
+        "@language": "en"
+      },
+      "schema:mainEntityOfPage": {
+        "@id": "https://www.wikidata.org/wiki/Q6484999"
+      }
+    },
+    {
+      "@id": "https://imagesnippets.com/imgtag/datasets/Imagesnippets/bringyourimage",
+      "rdfs:label": {
+        "@value": "bringyourimage",
+        "@language": "en"
+      }
+    },
+    {
+      "@id": "https://imagesnippets.com/imgtag/datasets/Imagesnippets/mmeditorial",
+      "rdfs:label": {
+        "@value": "mmeditorial",
+        "@language": "en"
+      }
+    }
+  ]
+}

@@ -1,0 +1,458 @@
+{ "head": {
+    "vars": [ "s" , "p" , "o" ]
+  } ,
+  "results": {
+    "bindings": [
+      { 
+        "s": { "type": "uri" , "value": "http://dbpedia.org/resource/Boat" } ,
+        "p": { "type": "uri" , "value": "http://www.w3.org/2000/01/rdf-schema#label" } ,
+        "o": { "type": "literal" , "xml:lang": "en" , "value": "boat" }
+      } ,
+      { 
+        "s": { "type": "uri" , "value": "http://dbpedia.org/resource/Golden_Gate_Bridge" } ,
+        "p": { "type": "uri" , "value": "http://www.w3.org/2000/01/rdf-schema#label" } ,
+        "o": { "type": "literal" , "xml:lang": "en" , "value": "Golden Gate Bridge" }
+      } ,
+      { 
+        "s": { "type": "uri" , "value": "http://dbpedia.org/resource/Marin_Headlands" } ,
+        "p": { "type": "uri" , "value": "http://www.w3.org/2000/01/rdf-schema#label" } ,
+        "o": { "type": "literal" , "xml:lang": "en" , "value": "Marin Headlands" }
+      } ,
+      { 
+        "s": { "type": "uri" , "value": "http://dbpedia.org/resource/Pacific_Ocean" } ,
+        "p": { "type": "uri" , "value": "http://www.w3.org/2000/01/rdf-schema#label" } ,
+        "o": { "type": "literal" , "xml:lang": "en" , "value": "Pacific Ocean" }
+      } ,
+      { 
+        "s": { "type": "uri" , "value": "http://schema.org/Person" } ,
+        "p": { "type": "uri" , "value": "http://www.w3.org/2000/01/rdf-schema#label" } ,
+        "o": { "type": "literal" , "xml:lang": "en" , "value": "Person" }
+      } ,
+      { 
+        "s": { "type": "uri" , "value": "http://www.wikidata.org/entity/Q6484999" } ,
+        "p": { "type": "uri" , "value": "http://www.w3.org/2000/01/rdf-schema#label" } ,
+        "o": { "type": "literal" , "xml:lang": "en" , "value": "lands end" }
+      } ,
+      { 
+        "s": { "type": "uri" , "value": "http://www.wikidata.org/entity/Q8063" } ,
+        "p": { "type": "uri" , "value": "http://www.w3.org/2000/01/rdf-schema#label" } ,
+        "o": { "type": "literal" , "xml:lang": "en" , "value": "rock" }
+      } ,
+      { 
+        "s": { "type": "uri" , "value": "http://sws.geonames.org/5391959/" } ,
+        "p": { "type": "uri" , "value": "http://www.w3.org/2000/01/rdf-schema#label" } ,
+        "o": { "type": "literal" , "xml:lang": "en" , "value": "San Francisco, California" }
+      } ,
+      { 
+        "s": { "type": "uri" , "value": "http://www.wikidata.org/entity/Q34679" } ,
+        "p": { "type": "uri" , "value": "http://www.w3.org/2000/01/rdf-schema#label" } ,
+        "o": { "type": "literal" , "xml:lang": "en" , "value": "sand" }
+      } ,
+      { 
+        "s": { "type": "uri" , "value": "https://imagesnippets.com/imgtag/rdf/info@margaretwarren.us/20190902_184336" } ,
+        "p": { "type": "uri" , "value": "http://purl.org/dc/terms/creator" } ,
+        "o": { "type": "uri" , "value": "https://imagesnippets.com/imgtag/users/info@margaretwarren.us" }
+      } ,
+      { 
+        "s": { "type": "uri" , "value": "http://cv.iptc.org/newscodes/digitalsourcetype/digitalCapture" } ,
+        "p": { "type": "uri" , "value": "http://www.w3.org/2000/01/rdf-schema#label" } ,
+        "o": { "type": "literal" , "xml:lang": "en" , "value": "Digital Capture" }
+      } ,
+      { 
+        "s": { "type": "uri" , "value": "http://vocab.getty.edu/aat/300312218" } ,
+        "p": { "type": "uri" , "value": "http://www.w3.org/2000/01/rdf-schema#label" } ,
+        "o": { "type": "literal" , "xml:lang": "en" , "value": "Labyrinth" }
+      } ,
+      { 
+        "s": { "type": "uri" , "value": "https://imagesnippets.com/imgtag/images/info@margaretwarren.us/20190902_184336.html" } ,
+        "p": { "type": "uri" , "value": "http://www.w3.org/1999/xhtml/vocab#stylesheet" } ,
+        "o": { "type": "uri" , "value": "https://imagesnippets.com/imgtag/adeel/style.css" }
+      } ,
+      { 
+        "s": { "type": "uri" , "value": "https://imagesnippets.com/imgtag/images/info@margaretwarren.us/20190902_184336.html" } ,
+        "p": { "type": "uri" , "value": "twitter:card" } ,
+        "o": { "type": "literal" , "xml:lang": "en" , "value": "summary_large_image" }
+      } ,
+      { 
+        "s": { "type": "uri" , "value": "https://imagesnippets.com/imgtag/images/info@margaretwarren.us/20190902_184336.html" } ,
+        "p": { "type": "uri" , "value": "https://ogp.me/ns#image" } ,
+        "o": { "type": "literal" , "xml:lang": "en" , "value": "https://imagesnippets.com/imgtag/images/info@margaretwarren.us/20190902_184336.jpg" }
+      } ,
+      { 
+        "s": { "type": "uri" , "value": "https://imagesnippets.com/imgtag/images/info@margaretwarren.us/20190902_184336.html" } ,
+        "p": { "type": "uri" , "value": "https://ogp.me/ns#type" } ,
+        "o": { "type": "literal" , "xml:lang": "en" , "value": "website" }
+      } ,
+      { 
+        "s": { "type": "uri" , "value": "https://imagesnippets.com/imgtag/images/info@margaretwarren.us/20190902_184336.html" } ,
+        "p": { "type": "uri" , "value": "https://ogp.me/ns#description" } ,
+        "o": { "type": "literal" , "xml:lang": "en" , "value": "A group of friends walking the Labyrinth at Lands End Park on a sunny day in San Francisco.<div>   <br /><\/div>                                       <div>The image could convey the   concept   that   solving   problems   can   be   light and carefree. <\/div>                    <br />                    <br />                    Here is the LIO description of this image:<br />                    <br />                    **depicts:** people walking a stone labyrinth<br />                    <br />                    **shows:** rocks arranged in spiral/labyrinth pattern, San Francisco Bay, cargo ship, mountains, clear blue sky, a dog<br />                    <br />                    **hasSetting:** Land's End, San Francisco, California, USA; daytime, outdoor coastal environment<br />                    <br />                    **hasInForeground:** stone labyrinth pathway made of rounded rocks arranged in concentric spiral patterns on sandy/gravelly ground<br />                    <br />                    **hasInBackground:** Golden Gate Bridge, Marin Headlands, San Francisco Bay, red cargo ship on water<br />                    <br />                    **hasDepictedBackground:** San Francisco Bay with blue water, mountains, and clear sky filling the entire background scene<br />                    <br />                    **conveys:** mindfulness, contemplation, peaceful exploration, spiritual practice, connection with nature, meditative journey<br />                    <br />                    **artisticElement:**<br />                    - **line:** curved, concentric lines formed by stone arrangements creating strong visual rhythm<br />                    - **color:** warm earth tones of sand and rock contrasting with vivid blue of sky and water; pink jacket providing a focal color accent<br />                    - **texture:** rough, natural textures of rounded stones against sandy ground<br />                    - **composition:** leading lines of the labyrinth draw the eye toward the figures and background<br />                    - **scale:** human figures provide scale reference against the vast bay and bridge<br />                    <br />                    **looksLike:** the stone arrangement looksLike a mandala or ancient ceremonial site" }
+      } ,
+      { 
+        "s": { "type": "uri" , "value": "https://imagesnippets.com/imgtag/images/info@margaretwarren.us/20190902_184336.html" } ,
+        "p": { "type": "uri" , "value": "https://ogp.me/ns#url" } ,
+        "o": { "type": "literal" , "xml:lang": "en" , "value": "https://imgsnp.co/wigyq" }
+      } ,
+      { 
+        "s": { "type": "uri" , "value": "https://imagesnippets.com/imgtag/images/info@margaretwarren.us/20190902_184336.html" } ,
+        "p": { "type": "uri" , "value": "https://ogp.me/ns#title" } ,
+        "o": { "type": "literal" , "xml:lang": "en" , "value": "Labyrinth" }
+      } ,
+      { 
+        "s": { "type": "uri" , "value": "https://imagesnippets.com/imgtag/images/info@margaretwarren.us/20190902_184336.html" } ,
+        "p": { "type": "uri" , "value": "https://ogp.me/ns#image:height" } ,
+        "o": { "type": "literal" , "xml:lang": "en" , "value": "762" }
+      } ,
+      { 
+        "s": { "type": "uri" , "value": "https://imagesnippets.com/imgtag/images/info@margaretwarren.us/20190902_184336.html" } ,
+        "p": { "type": "uri" , "value": "https://ogp.me/ns#image:width" } ,
+        "o": { "type": "literal" , "xml:lang": "en" , "value": "1016" }
+      } ,
+      { 
+        "s": { "type": "uri" , "value": "https://imagesnippets.com/imgtag/images/info@margaretwarren.us/20190902_184336.html" } ,
+        "p": { "type": "uri" , "value": "https://ogp.me/ns#image:alt" } ,
+        "o": { "type": "literal" , "xml:lang": "en" , "value": "people walking through a labyrinth at a park called Lands End in San Francisco with the Golden Gate Bridge in the background" }
+      } ,
+      { 
+        "s": { "type": "uri" , "value": "https://imagesnippets.com/imgtag/images/info@margaretwarren.us/20190902_184336.jpg" } ,
+        "p": { "type": "uri" , "value": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" } ,
+        "o": { "type": "uri" , "value": "https://w3id.org/lio/v1#Image" }
+      } ,
+      { 
+        "s": { "type": "uri" , "value": "https://imagesnippets.com/imgtag/images/info@margaretwarren.us/20190902_184336.jpg" } ,
+        "p": { "type": "uri" , "value": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" } ,
+        "o": { "type": "uri" , "value": "http://schema.org/ImageObject" }
+      } ,
+      { 
+        "s": { "type": "uri" , "value": "https://imagesnippets.com/imgtag/images/info@margaretwarren.us/20190902_184336.jpg" } ,
+        "p": { "type": "uri" , "value": "http://www.w3.org/2000/01/rdf-schema#seeAlso" } ,
+        "o": { "type": "uri" , "value": "https://imagesnippets.com/imgtag/rdf/info@margaretwarren.us/20190902_184336" }
+      } ,
+      { 
+        "s": { "type": "uri" , "value": "https://imagesnippets.com/imgtag/images/info@margaretwarren.us/20190902_184336.jpg" } ,
+        "p": { "type": "uri" , "value": "http://xmlns.com/foaf/0.1/depiction" } ,
+        "o": { "type": "uri" , "value": "http://vocab.getty.edu/aat/300312218" }
+      } ,
+      { 
+        "s": { "type": "uri" , "value": "https://imagesnippets.com/imgtag/images/info@margaretwarren.us/20190902_184336.jpg" } ,
+        "p": { "type": "uri" , "value": "http://www.w3.org/2000/01/rdf-schema#comment" } ,
+        "o": { "type": "literal" , "xml:lang": "en" , "value": "A group of friends walking the Labyrinth at Lands End Park on a sunny day in San Francisco.<div>   <br /><\/div>                                       <div>The image could convey the   concept   that   solving   problems   can   be   light and carefree. <\/div>                    <br />                    <br />                    Here is the LIO description of this image:<br />                    <br />                    **depicts:** people walking a stone labyrinth<br />                    <br />                    **shows:** rocks arranged in spiral/labyrinth pattern, San Francisco Bay, cargo ship, mountains, clear blue sky, a dog<br />                    <br />                    **hasSetting:** Land's End, San Francisco, California, USA; daytime, outdoor coastal environment<br />                    <br />                    **hasInForeground:** stone labyrinth pathway made of rounded rocks arranged in concentric spiral patterns on sandy/gravelly ground<br />                    <br />                    **hasInBackground:** Golden Gate Bridge, Marin Headlands, San Francisco Bay, red cargo ship on water<br />                    <br />                    **hasDepictedBackground:** San Francisco Bay with blue water, mountains, and clear sky filling the entire background scene<br />                    <br />                    **conveys:** mindfulness, contemplation, peaceful exploration, spiritual practice, connection with nature, meditative journey<br />                    <br />                    **artisticElement:**<br />                    - **line:** curved, concentric lines formed by stone arrangements creating strong visual rhythm<br />                    - **color:** warm earth tones of sand and rock contrasting with vivid blue of sky and water; pink jacket providing a focal color accent<br />                    - **texture:** rough, natural textures of rounded stones against sandy ground<br />                    - **composition:** leading lines of the labyrinth draw the eye toward the figures and background<br />                    - **scale:** human figures provide scale reference against the vast bay and bridge<br />                    <br />                    **looksLike:** the stone arrangement looksLike a mandala or ancient ceremonial site" }
+      } ,
+      { 
+        "s": { "type": "uri" , "value": "https://imagesnippets.com/imgtag/images/info@margaretwarren.us/20190902_184336.jpg" } ,
+        "p": { "type": "uri" , "value": "http://schema.org/creator" } ,
+        "o": { "type": "uri" , "value": "https://w3id.org/lio/v1#skolem_Margaret%20Warren_1792079786626" }
+      } ,
+      { 
+        "s": { "type": "uri" , "value": "https://imagesnippets.com/imgtag/images/info@margaretwarren.us/20190902_184336.jpg" } ,
+        "p": { "type": "uri" , "value": "http://schema.org/license" } ,
+        "o": { "type": "literal" , "xml:lang": "en" , "value": "https://creativecommons.org/licenses/by-nc-nd/4.0" }
+      } ,
+      { 
+        "s": { "type": "uri" , "value": "https://imagesnippets.com/imgtag/images/info@margaretwarren.us/20190902_184336.jpg" } ,
+        "p": { "type": "uri" , "value": "http://schema.org/name" } ,
+        "o": { "type": "literal" , "xml:lang": "en" , "value": "Labyrinth" }
+      } ,
+      { 
+        "s": { "type": "uri" , "value": "https://imagesnippets.com/imgtag/images/info@margaretwarren.us/20190902_184336.jpg" } ,
+        "p": { "type": "uri" , "value": "https://w3id.org/lio/v1#hasSetting" } ,
+        "o": { "type": "uri" , "value": "http://www.wikidata.org/entity/Q6484999" }
+      } ,
+      { 
+        "s": { "type": "uri" , "value": "https://imagesnippets.com/imgtag/images/info@margaretwarren.us/20190902_184336.jpg" } ,
+        "p": { "type": "uri" , "value": "https://w3id.org/lio/v1#shows" } ,
+        "o": { "type": "uri" , "value": "http://www.wikidata.org/entity/Q34679" }
+      } ,
+      { 
+        "s": { "type": "uri" , "value": "https://imagesnippets.com/imgtag/images/info@margaretwarren.us/20190902_184336.jpg" } ,
+        "p": { "type": "uri" , "value": "https://w3id.org/lio/v1#shows" } ,
+        "o": { "type": "uri" , "value": "http://wordnet-rdf.princeton.edu/id/09438954-n" }
+      } ,
+      { 
+        "s": { "type": "uri" , "value": "https://imagesnippets.com/imgtag/images/info@margaretwarren.us/20190902_184336.jpg" } ,
+        "p": { "type": "uri" , "value": "http://purl.org/dc/elements/1.1/title" } ,
+        "o": { "type": "literal" , "xml:lang": "en" , "value": "Labyrinth" }
+      } ,
+      { 
+        "s": { "type": "uri" , "value": "https://imagesnippets.com/imgtag/images/info@margaretwarren.us/20190902_184336.jpg" } ,
+        "p": { "type": "uri" , "value": "http://schema.org/thumbnail" } ,
+        "o": { "type": "uri" , "value": "https://imagesnippets.com/imgtag/images/info@margaretwarren.us/thumbnails/20190902_184336.jpg" }
+      } ,
+      { 
+        "s": { "type": "uri" , "value": "https://imagesnippets.com/imgtag/images/info@margaretwarren.us/20190902_184336.jpg" } ,
+        "p": { "type": "uri" , "value": "http://ns.adobe.com/photoshop/1.0/DateCreated" } ,
+        "o": { "type": "literal" , "xml:lang": "en" , "value": "2019-09-02" }
+      } ,
+      { 
+        "s": { "type": "uri" , "value": "https://imagesnippets.com/imgtag/images/info@margaretwarren.us/20190902_184336.jpg" } ,
+        "p": { "type": "uri" , "value": "https://w3id.org/lio/v1#hasInBackground" } ,
+        "o": { "type": "uri" , "value": "http://dbpedia.org/resource/Golden_Gate_Bridge" }
+      } ,
+      { 
+        "s": { "type": "uri" , "value": "https://imagesnippets.com/imgtag/images/info@margaretwarren.us/20190902_184336.jpg" } ,
+        "p": { "type": "uri" , "value": "https://w3id.org/lio/v1#hasInBackground" } ,
+        "o": { "type": "uri" , "value": "http://dbpedia.org/resource/Marin_Headlands" }
+      } ,
+      { 
+        "s": { "type": "uri" , "value": "https://imagesnippets.com/imgtag/images/info@margaretwarren.us/20190902_184336.jpg" } ,
+        "p": { "type": "uri" , "value": "https://w3id.org/lio/v1#hasInBackground" } ,
+        "o": { "type": "uri" , "value": "http://dbpedia.org/resource/Pacific_Ocean" }
+      } ,
+      { 
+        "s": { "type": "uri" , "value": "https://imagesnippets.com/imgtag/images/info@margaretwarren.us/20190902_184336.jpg" } ,
+        "p": { "type": "uri" , "value": "http://purl.org/dc/elements/1.1/creator" } ,
+        "o": { "type": "literal" , "xml:lang": "en" , "value": "Margaret Warren" }
+      } ,
+      { 
+        "s": { "type": "uri" , "value": "https://imagesnippets.com/imgtag/images/info@margaretwarren.us/20190902_184336.jpg" } ,
+        "p": { "type": "uri" , "value": "https://w3id.org/lio/v1#depicts" } ,
+        "o": { "type": "uri" , "value": "http://vocab.getty.edu/aat/300312218" }
+      } ,
+      { 
+        "s": { "type": "uri" , "value": "https://imagesnippets.com/imgtag/images/info@margaretwarren.us/20190902_184336.jpg" } ,
+        "p": { "type": "uri" , "value": "http://www.iptc.org/std/Iptc4xmpCore/1.0/xmlns/CiUrlWork" } ,
+        "o": { "type": "literal" , "xml:lang": "en" , "value": "http://www.margaretwarren.us,https://imagesnippets.com/imgtag/images/info@margaretwarren.us/20190902_184336.html" }
+      } ,
+      { 
+        "s": { "type": "uri" , "value": "https://imagesnippets.com/imgtag/images/info@margaretwarren.us/20190902_184336.jpg" } ,
+        "p": { "type": "uri" , "value": "http://www.iptc.org/std/Iptc4xmpCore/1.0/xmlns/CiEmailWork" } ,
+        "o": { "type": "literal" , "xml:lang": "en" , "value": "info@margaretwarren.us" }
+      } ,
+      { 
+        "s": { "type": "uri" , "value": "https://imagesnippets.com/imgtag/images/info@margaretwarren.us/20190902_184336.jpg" } ,
+        "p": { "type": "uri" , "value": "http://schema.org/about" } ,
+        "o": { "type": "uri" , "value": "http://vocab.getty.edu/aat/300312218" }
+      } ,
+      { 
+        "s": { "type": "uri" , "value": "https://imagesnippets.com/imgtag/images/info@margaretwarren.us/20190902_184336.jpg" } ,
+        "p": { "type": "uri" , "value": "http://schema.org/mentions" } ,
+        "o": { "type": "uri" , "value": "http://www.wikidata.org/entity/Q34679" }
+      } ,
+      { 
+        "s": { "type": "uri" , "value": "https://imagesnippets.com/imgtag/images/info@margaretwarren.us/20190902_184336.jpg" } ,
+        "p": { "type": "uri" , "value": "http://schema.org/mentions" } ,
+        "o": { "type": "uri" , "value": "http://wordnet-rdf.princeton.edu/id/09438954-n" }
+      } ,
+      { 
+        "s": { "type": "uri" , "value": "https://imagesnippets.com/imgtag/images/info@margaretwarren.us/20190902_184336.jpg" } ,
+        "p": { "type": "uri" , "value": "http://purl.org/dc/elements/1.1/rights" } ,
+        "o": { "type": "literal" , "xml:lang": "en" , "value": "Copyright 2020 Margaret Warren" }
+      } ,
+      { 
+        "s": { "type": "uri" , "value": "https://imagesnippets.com/imgtag/images/info@margaretwarren.us/20190902_184336.jpg" } ,
+        "p": { "type": "uri" , "value": "https://w3id.org/lio/v1#hasTag" } ,
+        "o": { "type": "literal" , "xml:lang": "en" , "value": "people" }
+      } ,
+      { 
+        "s": { "type": "uri" , "value": "https://imagesnippets.com/imgtag/images/info@margaretwarren.us/20190902_184336.jpg" } ,
+        "p": { "type": "uri" , "value": "https://w3id.org/lio/v1#hasTag" } ,
+        "o": { "type": "literal" , "xml:lang": "en" , "value": "labyrinth" }
+      } ,
+      { 
+        "s": { "type": "uri" , "value": "https://imagesnippets.com/imgtag/images/info@margaretwarren.us/20190902_184336.jpg" } ,
+        "p": { "type": "uri" , "value": "https://w3id.org/lio/v1#hasTag" } ,
+        "o": { "type": "literal" , "xml:lang": "en" , "value": "lands end" }
+      } ,
+      { 
+        "s": { "type": "uri" , "value": "https://imagesnippets.com/imgtag/images/info@margaretwarren.us/20190902_184336.jpg" } ,
+        "p": { "type": "uri" , "value": "http://schema.org/keywords" } ,
+        "o": { "type": "literal" , "xml:lang": "en" , "value": "lands end,labyrinth,people" }
+      } ,
+      { 
+        "s": { "type": "uri" , "value": "https://imagesnippets.com/imgtag/images/info@margaretwarren.us/20190902_184336.jpg" } ,
+        "p": { "type": "uri" , "value": "https://w3id.org/lio/v1#hasVisualPart" } ,
+        "o": { "type": "uri" , "value": "https://imagesnippets.com/imgtag/images/info@margaretwarren.us/20190902_184336.html#Region_Region%20B" }
+      } ,
+      { 
+        "s": { "type": "uri" , "value": "https://imagesnippets.com/imgtag/images/info@margaretwarren.us/20190902_184336.jpg" } ,
+        "p": { "type": "uri" , "value": "https://w3id.org/lio/v1#hasVisualPart" } ,
+        "o": { "type": "uri" , "value": "https://imagesnippets.com/imgtag/images/info@margaretwarren.us/20190902_184336.html#Region_Region%20A" }
+      } ,
+      { 
+        "s": { "type": "uri" , "value": "https://imagesnippets.com/imgtag/images/info@margaretwarren.us/20190902_184336.jpg" } ,
+        "p": { "type": "uri" , "value": "https://w3id.org/lio/v1#hasVisualPart" } ,
+        "o": { "type": "uri" , "value": "https://imagesnippets.com/imgtag/images/info@margaretwarren.us/20190902_184336.html#Region_Region%20C" }
+      } ,
+      { 
+        "s": { "type": "uri" , "value": "https://imagesnippets.com/imgtag/images/info@margaretwarren.us/20190902_184336.jpg" } ,
+        "p": { "type": "uri" , "value": "http://www.iptc.org/std/Iptc4xmpCore/1.0/xmlns/Scene" } ,
+        "o": { "type": "uri" , "value": "http://cv.iptc.org/newscodes/scene/011100" }
+      } ,
+      { 
+        "s": { "type": "uri" , "value": "https://imagesnippets.com/imgtag/images/info@margaretwarren.us/20190902_184336.jpg" } ,
+        "p": { "type": "uri" , "value": "http://www.iptc.org/std/Iptc4xmpCore/1.0/xmlns/Scene" } ,
+        "o": { "type": "uri" , "value": "http://cv.iptc.org/newscodes/scene/010900" }
+      } ,
+      { 
+        "s": { "type": "uri" , "value": "https://imagesnippets.com/imgtag/images/info@margaretwarren.us/20190902_184336.jpg" } ,
+        "p": { "type": "uri" , "value": "http://www.iptc.org/std/Iptc4xmpCore/1.0/xmlns/Scene" } ,
+        "o": { "type": "uri" , "value": "http://cv.iptc.org/newscodes/scene/011600" }
+      } ,
+      { 
+        "s": { "type": "uri" , "value": "https://imagesnippets.com/imgtag/images/info@margaretwarren.us/20190902_184336.jpg" } ,
+        "p": { "type": "uri" , "value": "http://ns.adobe.com/xap/1.0/rights/usageTerms" } ,
+        "o": { "type": "literal" , "xml:lang": "en" , "value": "Attribution-NonCommercial-NoDerivs Creative Commons" }
+      } ,
+      { 
+        "s": { "type": "uri" , "value": "https://imagesnippets.com/imgtag/images/info@margaretwarren.us/20190902_184336.jpg" } ,
+        "p": { "type": "uri" , "value": "https://w3id.org/lio/v1#technique" } ,
+        "o": { "type": "uri" , "value": "http://dbpedia.org/resource/Color_photography" }
+      } ,
+      { 
+        "s": { "type": "uri" , "value": "https://imagesnippets.com/imgtag/images/info@margaretwarren.us/20190902_184336.jpg" } ,
+        "p": { "type": "uri" , "value": "https://w3id.org/lio/v1#technique" } ,
+        "o": { "type": "uri" , "value": "http://dbpedia.org/resource/Installation_art" }
+      } ,
+      { 
+        "s": { "type": "uri" , "value": "https://imagesnippets.com/imgtag/images/info@margaretwarren.us/20190902_184336.jpg" } ,
+        "p": { "type": "uri" , "value": "http://ns.adobe.com/xap/1.0/rights/WebStatement" } ,
+        "o": { "type": "uri" , "value": "https://creativecommons.org/licenses/by-nc-nd/4.0" }
+      } ,
+      { 
+        "s": { "type": "uri" , "value": "https://imagesnippets.com/imgtag/images/info@margaretwarren.us/20190902_184336.jpg" } ,
+        "p": { "type": "uri" , "value": "http://ns.useplus.org/ldf/xmp/1.0/LicensorURL" } ,
+        "o": { "type": "literal" , "xml:lang": "en" , "value": "https://imagesnippets.com/imgtag/images/info@margaretwarren.us/20190902_184336.html?flip=true" }
+      } ,
+      { 
+        "s": { "type": "uri" , "value": "https://imagesnippets.com/imgtag/images/info@margaretwarren.us/20190902_184336.jpg" } ,
+        "p": { "type": "uri" , "value": "http://schema.org/acquireLicensePage" } ,
+        "o": { "type": "literal" , "xml:lang": "en" , "value": "https://imagesnippets.com/imgtag/images/info@margaretwarren.us/20190902_184336.html?flip=true" }
+      } ,
+      { 
+        "s": { "type": "uri" , "value": "https://imagesnippets.com/imgtag/images/info@margaretwarren.us/20190902_184336.jpg" } ,
+        "p": { "type": "uri" , "value": "https://w3id.org/lio/v1#conveys" } ,
+        "o": { "type": "uri" , "value": "http://w3id.org/tate-skos#f6eec909cf0a4e878652108ce1986cb5" }
+      } ,
+      { 
+        "s": { "type": "uri" , "value": "https://imagesnippets.com/imgtag/images/info@margaretwarren.us/20190902_184336.jpg" } ,
+        "p": { "type": "uri" , "value": "https://w3id.org/lio/v1#conveys" } ,
+        "o": { "type": "uri" , "value": "http://wordnet-rdf.princeton.edu/id/00154629-n" }
+      } ,
+      { 
+        "s": { "type": "uri" , "value": "https://imagesnippets.com/imgtag/images/info@margaretwarren.us/20190902_184336.jpg" } ,
+        "p": { "type": "uri" , "value": "https://w3id.org/lio/v1#hasSceneLocation" } ,
+        "o": { "type": "uri" , "value": "http://sws.geonames.org/5391959/" }
+      } ,
+      { 
+        "s": { "type": "uri" , "value": "https://imagesnippets.com/imgtag/images/info@margaretwarren.us/20190902_184336.jpg" } ,
+        "p": { "type": "uri" , "value": "https://w3id.org/lio/v1#location" } ,
+        "o": { "type": "uri" , "value": "https://w3id.org/lio/v1#skolem_Land's%20End%20Park_1792079786625" }
+      } ,
+      { 
+        "s": { "type": "uri" , "value": "https://imagesnippets.com/imgtag/images/info@margaretwarren.us/20190902_184336.jpg" } ,
+        "p": { "type": "uri" , "value": "https://w3id.org/lio/v1#isIn" } ,
+        "o": { "type": "uri" , "value": "https://imagesnippets.com/imgtag/datasets/Imagesnippets/mmeditorial" }
+      } ,
+      { 
+        "s": { "type": "uri" , "value": "https://imagesnippets.com/imgtag/images/info@margaretwarren.us/20190902_184336.jpg" } ,
+        "p": { "type": "uri" , "value": "https://w3id.org/lio/v1#isIn" } ,
+        "o": { "type": "uri" , "value": "https://imagesnippets.com/imgtag/datasets/Imagesnippets/bringyourimage" }
+      } ,
+      { 
+        "s": { "type": "uri" , "value": "https://imagesnippets.com/imgtag/images/info@margaretwarren.us/20190902_184336.jpg" } ,
+        "p": { "type": "uri" , "value": "http://schema.org/copyrightNotice" } ,
+        "o": { "type": "literal" , "xml:lang": "en" , "value": "Copyright 2020 Margaret Warren" }
+      } ,
+      { 
+        "s": { "type": "uri" , "value": "https://imagesnippets.com/imgtag/images/info@margaretwarren.us/20190902_184336.jpg" } ,
+        "p": { "type": "uri" , "value": "http://ns.adobe.com/photoshop/1.0/Credit" } ,
+        "o": { "type": "literal" , "xml:lang": "en" , "value": "Margaret Warren" }
+      } ,
+      { 
+        "s": { "type": "uri" , "value": "https://imagesnippets.com/imgtag/images/info@margaretwarren.us/20190902_184336.jpg" } ,
+        "p": { "type": "uri" , "value": "http://www.iptc.org/std/Iptc4xmpCore/1.0/xmlns/ExtDescrAccessibility" } ,
+        "o": { "type": "literal" , "xml:lang": "en" , "value": "A group of friends walking the Labyrinth at Lands End Park on a sunny day in San Francisco.<div>   <br /><\/div>     <div>The image could convey the concept that solving problems can be   light and carefree. <\/div>" }
+      } ,
+      { 
+        "s": { "type": "uri" , "value": "https://imagesnippets.com/imgtag/images/info@margaretwarren.us/20190902_184336.jpg" } ,
+        "p": { "type": "uri" , "value": "http://www.iptc.org/std/Iptc4xmpCore/1.0/xmlns/AltTextAccessibility" } ,
+        "o": { "type": "literal" , "xml:lang": "en" , "value": "people walking through a labyrinth at a park called Lands End in San Francisco with the Golden Gate Bridge in the background" }
+      } ,
+      { 
+        "s": { "type": "uri" , "value": "https://imagesnippets.com/imgtag/images/info@margaretwarren.us/20190902_184336.jpg" } ,
+        "p": { "type": "uri" , "value": "http://schema.org/contentUrl" } ,
+        "o": { "type": "uri" , "value": "https://imagesnippets.com/imgtag/images/info@margaretwarren.us/20190902_184336.jpg" }
+      } ,
+      { 
+        "s": { "type": "uri" , "value": "https://imagesnippets.com/imgtag/images/info@margaretwarren.us/20190902_184336.jpg" } ,
+        "p": { "type": "uri" , "value": "http://schema.org/creditText" } ,
+        "o": { "type": "literal" , "xml:lang": "en" , "value": "Margaret Warren" }
+      } ,
+      { 
+        "s": { "type": "uri" , "value": "https://imagesnippets.com/imgtag/images/info@margaretwarren.us/20190902_184336.jpg" } ,
+        "p": { "type": "uri" , "value": "https://www.wikidata.org/wiki/Property:P180" } ,
+        "o": { "type": "uri" , "value": "http://vocab.getty.edu/aat/300312218" }
+      } ,
+      { 
+        "s": { "type": "uri" , "value": "https://imagesnippets.com/imgtag/images/info@margaretwarren.us/20190902_184336.jpg" } ,
+        "p": { "type": "uri" , "value": "http://iptc.org/std/Iptc4xmpExt/2008-02-29/DigitalSourceType" } ,
+        "o": { "type": "uri" , "value": "http://cv.iptc.org/newscodes/digitalsourcetype/digitalCapture" }
+      } ,
+      { 
+        "s": { "type": "uri" , "value": "https://imagesnippets.com/imgtag/images/info@margaretwarren.us/20190902_184336.jpg" } ,
+        "p": { "type": "uri" , "value": "http://ns.useplus.org/ldf/xmp/1.0/DataMining" } ,
+        "o": { "type": "uri" , "value": "http://ns.useplus.org/ldf/vocab/DMI-PROHIBITED-EXCEPTSEARCHENGINEINDEXING" }
+      } ,
+      { 
+        "s": { "type": "uri" , "value": "http://w3id.org/tate-skos#f6eec909cf0a4e878652108ce1986cb5" } ,
+        "p": { "type": "uri" , "value": "http://www.w3.org/2000/01/rdf-schema#label" } ,
+        "o": { "type": "literal" , "xml:lang": "en" , "value": "ritual " }
+      } ,
+      { 
+        "s": { "type": "uri" , "value": "http://wordnet-rdf.princeton.edu/id/09438954-n" } ,
+        "p": { "type": "uri" , "value": "http://www.w3.org/2000/01/rdf-schema#label" } ,
+        "o": { "type": "literal" , "xml:lang": "en" , "value": "rocks" }
+      } ,
+      { 
+        "s": { "type": "uri" , "value": "http://wordnet-rdf.princeton.edu/id/00154629-n" } ,
+        "p": { "type": "uri" , "value": "http://www.w3.org/2000/01/rdf-schema#label" } ,
+        "o": { "type": "literal" , "xml:lang": "en" , "value": "solving puzzles" }
+      } ,
+      { 
+        "s": { "type": "uri" , "value": "https://imagesnippets.com/imgtag/datasets/Imagesnippets/mmeditorial" } ,
+        "p": { "type": "uri" , "value": "http://www.w3.org/2000/01/rdf-schema#label" } ,
+        "o": { "type": "literal" , "xml:lang": "en" , "value": "mmeditorial" }
+      } ,
+      { 
+        "s": { "type": "uri" , "value": "https://imagesnippets.com/imgtag/images/info@margaretwarren.us/20190902_184336.html#Region_Region%20B" } ,
+        "p": { "type": "uri" , "value": "https://w3id.org/lio/v1#shows" } ,
+        "o": { "type": "uri" , "value": "http://dbpedia.org/resource/Boat" }
+      } ,
+      { 
+        "s": { "type": "uri" , "value": "https://imagesnippets.com/imgtag/images/info@margaretwarren.us/20190902_184336.html#Region_Region%20A" } ,
+        "p": { "type": "uri" , "value": "https://w3id.org/lio/v1#shows" } ,
+        "o": { "type": "uri" , "value": "http://dbpedia.org/resource/Boat" }
+      } ,
+      { 
+        "s": { "type": "uri" , "value": "http://ns.useplus.org/ldf/vocab/DMI-PROHIBITED-EXCEPTSEARCHENGINEINDEXING" } ,
+        "p": { "type": "uri" , "value": "http://www.w3.org/2000/01/rdf-schema#label" } ,
+        "o": { "type": "literal" , "xml:lang": "en" , "value": "Prohibited except for search engine indexing" }
+      } ,
+      { 
+        "s": { "type": "uri" , "value": "https://imagesnippets.com/imgtag/images/info@margaretwarren.us/20190902_184336.html#Region_Region%20C" } ,
+        "p": { "type": "uri" , "value": "https://w3id.org/lio/v1#shows" } ,
+        "o": { "type": "uri" , "value": "http://www.wikidata.org/entity/Q8063" }
+      } ,
+      { 
+        "s": { "type": "uri" , "value": "https://imagesnippets.com/imgtag/datasets/Imagesnippets/bringyourimage" } ,
+        "p": { "type": "uri" , "value": "http://www.w3.org/2000/01/rdf-schema#label" } ,
+        "o": { "type": "literal" , "xml:lang": "en" , "value": "bringyourimage" }
+      } ,
+      { 
+        "s": { "type": "uri" , "value": "https://w3id.org/lio/v1#skolem_Land's%20End%20Park_1792079786625" } ,
+        "p": { "type": "uri" , "value": "http://www.w3.org/2000/01/rdf-schema#label" } ,
+        "o": { "type": "literal" , "xml:lang": "en" , "value": "Land's End Park" }
+      } ,
+      { 
+        "s": { "type": "uri" , "value": "https://w3id.org/lio/v1#skolem_Margaret%20Warren_1792079786626" } ,
+        "p": { "type": "uri" , "value": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" } ,
+        "o": { "type": "uri" , "value": "http://schema.org/Person" }
+      } ,
+      { 
+        "s": { "type": "uri" , "value": "https://w3id.org/lio/v1#skolem_Margaret%20Warren_1792079786626" } ,
+        "p": { "type": "uri" , "value": "http://www.w3.org/2000/01/rdf-schema#label" } ,
+        "o": { "type": "literal" , "xml:lang": "en" , "value": "Margaret Warren" }
+      }
+    ]
+  }
+}

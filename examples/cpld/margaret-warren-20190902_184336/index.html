@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1" >
+    <meta
+      name="id"
+      content="https://imagesnippets.com/imgtag/images/info@margaretwarren.us/20190902_184336.html"
+    >
+    <link
+      rel="describedby"
+      type="application/ld+json"
+      href="graph.jsonld"
+      crossorigin
+    >
+    <title>Labyrinth</title>
+    <link rel="stylesheet" href="styles/regions.css" >
+  </head>
+  <body id="body">
+    <main id="main">
+      <hgroup id="title">
+        <h1 id="e123">Labyrinth</h1>
+      </hgroup>
+      <!-- The canvas: the image plus an image map. Element ids match the node ids in
+         graph.jsonld (doc:image, doc:canvas, doc:region-*). Area coords are in
+         image pixels (1016 x 762): rect is left,top,right,bottom; poly is x1,y1,x2,y2,… -->
+      <figure id="canvas">
+        <div id="stage">
+          <img
+            id="image"
+            src="https://imagesnippets.com/imgtag/images/info@margaretwarren.us/20190902_184336.jpg"
+            width="1016"
+            height="762"
+            usemap="#regions"
+            alt="people walking through a labyrinth at a park called Lands End in San Francisco with the Golden Gate Bridge in the background"
+          >
+        </div>
+        <figcaption id="caption">
+          A group of friends walking the Labyrinth at Lands End Park on a sunny
+          day in San Francisco. The image could convey the concept that solving
+          problems can be light and carefree.
+        </figcaption>
+      </figure>
+      <p id="credit">
+        Photo by: <span id="creator">Margaret Warren</span> on
+        <span id="date">2019-09-02</span>
+      </p>
+      <p id="e234">
+        Licensed <a id="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0">CC BY-NC-ND 4.0</a>.
+      </p>
+    </main>
+    <!-- The regions come from graph.jsonld: each part of doc:image has an oa:hasSelector. The script
+       builds <map id="regions"> (one <area id="region-x"> per doc:region-x, so the ids stay the pin
+       between this page and the graph) and draws each area as an SVG outline, because an <area> cannot
+       be styled and an image map does not scale with a responsive image. A click on a region shows
+       what it shows (entity id, type, label). -->
+    <script id="regions-script" src="scripts/regions.js"></script>
+  </body>
+</html>
