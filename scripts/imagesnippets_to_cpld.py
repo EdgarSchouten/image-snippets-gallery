@@ -6,7 +6,8 @@
 writes, in DIR:
 
     index.html          the canvas: the image, its caption and credit
-    graph.jsonld        the image's graph (schema.org, LIO, Web Annotation) and its regions
+    graph.jsonld        the image's graph (schema.org, LIO, Web Annotation) and its regions: each a
+                        SpecificResource of the canvas, with its own Annotation, in a collection
     media/NAME.jpg      a copy of the image
     scripts/regions.js  builds the image map from graph.jsonld, shows what a region shows
     styles/regions.css
@@ -63,6 +64,7 @@ CONTEXT = {
     "dbr": "http://dbpedia.org/resource/",
     "aat": "http://vocab.getty.edu/aat/",
     "oa": "http://www.w3.org/ns/oa#",
+    "as": "http://www.w3.org/ns/activitystreams#",
     "iptc4xmpext": "http://iptc.org/std/Iptc4xmpExt/2008-02-29/",
     "xmp": "http://ns.adobe.com/xap/1.0/",
 }
@@ -464,6 +466,7 @@ def build_document(row, triples, regions, wikidata=None, wikidata_lang="en"):
         nodes["doc:image"]["schema:height"] = [{"@value": regions["height"]}]
 
     listing = []
+    annotations = []
     for iri, ident in region_ids.items():
         doc_id = "doc:" + ident
         label = node_label(iri, labels)
@@ -477,7 +480,20 @@ def build_document(row, triples, regions, wikidata=None, wikidata_lang="en"):
                     what.append(name)
         shape = regions["shapes"].get(regions_in[iri])
         if shape:
+            # A region is a part of the canvas (a SpecificResource: the canvas is its source, with a selector);
+            # its annotation, a node of its own, identifies the region as what it shows (the body).
+            node.setdefault("@type", []).append("oa:SpecificResource")
+            node["oa:hasSource"] = [{"@id": "doc:canvas"}]
             node["oa:hasSelector"] = [selector(shape)]
+            annotation_id = doc_id.replace("region-", "annotation-", 1)
+            nodes[annotation_id] = {
+                "@id": annotation_id,
+                "@type": ["oa:Annotation"],
+                "oa:motivatedBy": [{"@id": "oa:identifying"}],
+                "oa:hasTarget": [{"@id": doc_id}],
+                "oa:hasBody": [dict(v) for v in node.get("lio:shows", [])],
+            }
+            annotations.append(annotation_id)
         listing.append({"id": ident, "label": label, "shows": what, "shape": shape})
 
     # The page, and the canvas. CP/LD does not nest parts: the canvas and every region are parts of the page.
@@ -494,7 +510,27 @@ def build_document(row, triples, regions, wikidata=None, wikidata_lang="en"):
         "schema:contentUrl": [{"@id": content}],
     }
 
-    ordered = [page, "doc:image", "doc:canvas"] + ["doc:" + i for i in region_ids.values()]
+    # The annotations are in a collection of one page (the Web Annotation model's AnnotationCollection, which is
+    # as:OrderedCollection); the items are repeated values, not an RDF list.
+    if annotations:
+        nodes["doc:annotations"] = {
+            "@id": "doc:annotations",
+            "@type": ["as:OrderedCollection"],
+            "rdfs:label": [{"@value": "Annotations of the image"}],
+            "as:totalItems": [{"@value": len(annotations)}],
+            "as:first": [{"@id": "doc:annotations-page"}],
+            "as:last": [{"@id": "doc:annotations-page"}],
+        }
+        nodes["doc:annotations-page"] = {
+            "@id": "doc:annotations-page",
+            "@type": ["as:OrderedCollectionPage"],
+            "as:partOf": [{"@id": "doc:annotations"}],
+            "as:startIndex": [{"@value": 0}],
+            "as:items": [{"@id": a} for a in annotations],
+        }
+
+    ordered = [page, "doc:image", "doc:canvas"] + ["doc:" + i for i in region_ids.values()] + annotations + [
+        "doc:annotations", "doc:annotations-page"]
     graph = [nodes.pop(i) for i in ordered if i in nodes]
     graph += list(nodes.values())
 

@@ -210,7 +210,7 @@
   function build() {
     var docBase = expand('doc:'), page = byId[docBase.replace(/#$/, '')];
     var regions = list(page && page['schema:hasPart']).map(function (p) {
-      var iri = expand(p['@id']), node = byId[iri] || {}, s = shapeOf(list(node['oa:hasSelector'])[0]);
+      var iri = expand(p['@id']), node = byId[iri] || {}, s = shapeOf(selectorIn(node));
       return s && { id: iri.slice(docBase.length), node: node, shape: s.shape, coords: s.coords };
     }).filter(Boolean);
     // The first area wins where areas overlap: by schema:position, then polygons (people, bridge) before rects (boxes behind them).
@@ -231,7 +231,7 @@
   }
   // ---- Adding regions ------------------------------------------------------------------------------
   // A region is drawn on the image (rectangle, polygon or freehand), and is given what it shows. It becomes
-  // the same nodes as the regions in the graph: a region with an oa:hasSelector and lio:shows, and a new
+  // the same nodes as the regions in the graph: a region with an oa:hasSelector and lio:shows, with its annotation, and a new
   // instance when what it shows is not in the graph yet. The viewer gets them in the event cpld-add; the
   // button "Copy JSON-LD" gives them as text to put in the graph file.
   var KINDS = [
@@ -307,12 +307,66 @@
     return { '@type': 'oa:SvgSelector', 'rdf:value': '<svg xmlns="http://www.w3.org/2000/svg"><polygon points="' + pairs.join(' ') + '"/></svg>' };
   }
 
+  // A region is the part of the canvas that is drawn (an oa:SpecificResource: the canvas is its source, with a
+  // selector); lio:shows says what it shows. Its own node, doc:annotation-a for doc:region-a, is the Web
+  // Annotation that identifies the region as what it shows: oa:hasTarget the region, oa:hasBody the entity.
+  // Earlier shapes (a selector, or an oa:hasTarget with the selector, on a region that is the annotation too)
+  // are read as well, and become this shape when the region is changed.
+  var CANVAS = 'doc:canvas';
+  function selectorIn(node) {
+    var t = node && list(node['oa:hasTarget'])[0];
+    return (node && list(node['oa:hasSelector'])[0]) || (t && list(t['oa:hasSelector'])[0]);
+  }
+  function annotationId(regionId) { return regionId.replace(/(^|[#:])region-/, '$1annotation-'); }
+  function annotationOf(region) {
+    var body = list(region['lio:shows']).map(function (s) { return { '@id': s['@id'] }; });
+    return { '@id': annotationId(region['@id']), '@type': 'oa:Annotation', 'oa:motivatedBy': { '@id': 'oa:identifying' },
+      'oa:hasTarget': { '@id': region['@id'] }, 'oa:hasBody': body.length === 1 ? body[0] : body };
+  }
+  // Brings a region of an earlier shape to this one; gives the annotation nodes that it did not have.
+  function upgrade(region) {
+    var sel = selectorIn(region), extra = [];
+    if (!sel) return extra;
+    var type = list(region['@type']).filter(function (t) { return t !== 'oa:Annotation'; });
+    if (type.indexOf('oa:SpecificResource') < 0) type.push('oa:SpecificResource');
+    region['@type'] = type.length === 1 ? type[0] : type;
+    region['oa:hasSource'] = { '@id': CANVAS };
+    region['oa:hasSelector'] = sel;
+    delete region['oa:hasTarget']; delete region['oa:motivation']; delete region['oa:hasBody'];
+    if (!byId[expand(annotationId(region['@id']))]) {
+      var a = annotationOf(region);
+      byId[expand(a['@id'])] = a;
+      extra.push(a);
+    }
+    return extra;
+  }
+
+  // The annotations are in a collection (a collection with one page, after the Web Annotation model: the
+  // class AnnotationCollection is as:OrderedCollection). Its total and its items are made again from the
+  // annotations that there are; the nodes are returned so that they get saved and shown. A file whose
+  // context has no prefix "as" keeps no collection.
+  function syncCollection() {
+    if (typeof context['as'] !== 'string') return [];
+    var coll = byId[expand('doc:annotations')], page = byId[expand('doc:annotations-page')];
+    if (!coll) coll = { '@id': 'doc:annotations', '@type': 'as:OrderedCollection', 'rdfs:label': 'Annotations of the image' };
+    if (!page) page = { '@id': 'doc:annotations-page', '@type': 'as:OrderedCollectionPage', 'as:partOf': { '@id': 'doc:annotations' }, 'as:startIndex': 0 };
+    var items = Object.keys(byId).filter(function (k) { return list(byId[k]['@type']).indexOf('oa:Annotation') >= 0; })
+      .map(function (k) { return { '@id': byId[k]['@id'] }; });
+    coll['as:totalItems'] = items.length;
+    page['as:items'] = items;
+    if (items.length) { coll['as:first'] = { '@id': page['@id'] }; coll['as:last'] = { '@id': page['@id'] }; }
+    else { delete coll['as:first']; delete coll['as:last']; }
+    byId[expand(coll['@id'])] = coll; byId[expand(page['@id'])] = page;
+    return [coll, page];
+  }
+  function iris(nodes) { return nodes.map(function (n) { return expand(n['@id']); }); }
+
   // A position in front of (or behind) all the other regions.
   function edgePosition(except, front) {
     var page = byId[pageIri()], keys = [];
     list(page && page['schema:hasPart']).forEach(function (p) {
       var iri = expand(p['@id']), n = byId[iri];
-      if (n && n['oa:hasSelector'] && iri !== except) keys.push(positionOf(n));
+      if (n && selectorIn(n) && iri !== except) keys.push(positionOf(n));
     });
     if (!keys.length) return 0;
     return front ? Math.min.apply(null, keys) - 1 : Math.max.apply(null, keys) + 1;
@@ -326,17 +380,21 @@
       shownId = inst['@id'];
       nodes.push(inst);
     }
-    var region = { '@id': 'doc:region-' + rid, 'rdfs:label': 'Region ' + rid.toUpperCase(), 'lio:shows': { '@id': shownId }, 'oa:hasSelector': selectorOf(shape), 'schema:position': edgePosition(null, true) };
-    nodes.push(region);
+    var region = { '@id': 'doc:region-' + rid, '@type': 'oa:SpecificResource', 'rdfs:label': 'Region ' + rid.toUpperCase(),
+      'oa:hasSource': { '@id': CANVAS }, 'oa:hasSelector': selectorOf(shape), 'lio:shows': { '@id': shownId }, 'schema:position': edgePosition(null, true) };
+    nodes.push(region, annotationOf(region));
     var page = byId[pageIri()];
     if (page) page['schema:hasPart'] = list(page['schema:hasPart']).concat([{ '@id': region['@id'] }]);
     nodes.forEach(function (n) { byId[expand(n['@id'])] = n; });
     addArea({ id: 'region-' + rid, node: region, shape: shape.shape, coords: shape.coords }, true);
     scale();
     added = added.concat(nodes);
+    var coll = syncCollection();
+    coll.forEach(function (n) { if (added.indexOf(n) < 0 && changed.indexOf(n) < 0) changed.push(n); });
+    if (coll.length) document.dispatchEvent(new CustomEvent('cpld-remove', { detail: { iris: iris(coll) } }));
     // What the viewer needs: the new nodes, and the page that has the region as a part.
     var detail = { context: context, focus: expand('doc:') + 'region-' + rid,
-      nodes: nodes.concat([{ '@id': pageIri(), 'schema:hasPart': [{ '@id': region['@id'] }] }]) };
+      nodes: nodes.concat(coll, [{ '@id': pageIri(), 'schema:hasPart': [{ '@id': region['@id'] }] }]) };
     document.dispatchEvent(new CustomEvent('cpld-add', { detail: detail }));
     focusRegion(detail.focus);
     return rid;
@@ -380,7 +438,7 @@
       toggle.classList.toggle('on', !open);
     });
     copy.addEventListener('click', function () {
-      var page = { '@id': pageIri(), 'schema:hasPart': added.filter(function (n) { return n['oa:hasSelector']; }).map(function (n) { return { '@id': n['@id'] }; }) };
+      var page = { '@id': pageIri(), 'schema:hasPart': added.filter(function (n) { return selectorIn(n); }).map(function (n) { return { '@id': n['@id'] }; }) };
       var nodes = added.concat(changed);
       // A graph file with an image graph gets the nodes in that graph; the page node stays in the default graph.
       var text = JSON.stringify({ '@context': context, '@graph': hasImageGraph ? [page, { '@id': IMAGE_GRAPH, '@graph': nodes }] : nodes.concat([page]) }, null, 2);
@@ -495,11 +553,18 @@
 
     // Tell the viewer that a region has changed: it takes the old one out of its graph and gets the new one.
     function publish(node, iri) {
+      var extra = upgrade(node);
+      if (extra.length) extra = extra.concat(syncCollection());
       if (added.indexOf(node) < 0 && changed.indexOf(node) < 0) changed.push(node);
+      // An annotation that the file does not have yet is new; the collection is a node that changes.
+      extra.forEach(function (n) {
+        if (added.indexOf(n) >= 0 || changed.indexOf(n) >= 0) return;
+        if (n['@type'] === 'oa:Annotation') added.push(n); else changed.push(n);
+      });
       sync();
-      document.dispatchEvent(new CustomEvent('cpld-remove', { detail: { iris: [iri] } }));
+      document.dispatchEvent(new CustomEvent('cpld-remove', { detail: { iris: [iri].concat(iris(extra.filter(function (n) { return byId[expand(n['@id'])] && n['@type'] !== 'oa:Annotation'; }))) } }));
       document.dispatchEvent(new CustomEvent('cpld-add', { detail: { context: context, focus: iri,
-        nodes: [node, { '@id': pageIri(), 'schema:hasPart': [{ '@id': iri }] }] } }));
+        nodes: [node].concat(extra, [{ '@id': pageIri(), 'schema:hasPart': [{ '@id': iri }] }]) } }));
       focusRegion(iri);
     }
     // To the front or to the back: the position in the map, and schema:position, so that it stays that way.
@@ -554,9 +619,20 @@
       if (added.indexOf(node) >= 0) added = added.filter(function (x) { return x !== node; });
       else deleted.push(id);
       changed = changed.filter(function (x) { return x !== node; });
+      // The annotation of the region goes with it.
+      var aid = annotationId(id), aIri = expand('doc:') + aid, an = byId[aIri];
+      if (an) {
+        gone.push(aIri); delete byId[aIri];
+        if (added.indexOf(an) >= 0) added = added.filter(function (x) { return x !== an; });
+        else deleted.push(aid);
+        changed = changed.filter(function (x) { return x !== an; });
+      }
+      var coll = syncCollection();
+      coll.forEach(function (n) { if (added.indexOf(n) < 0 && changed.indexOf(n) < 0) changed.push(n); });
       focusRegion(null);
       sync();
-      document.dispatchEvent(new CustomEvent('cpld-remove', { detail: { iris: gone, focus: pageIri() } }));
+      document.dispatchEvent(new CustomEvent('cpld-remove', { detail: { iris: gone.concat(iris(coll)), focus: pageIri() } }));
+      if (coll.length) document.dispatchEvent(new CustomEvent('cpld-add', { detail: { context: context, focus: pageIri(), nodes: coll } }));
     }
 
     function startEdit(id) {
@@ -642,7 +718,7 @@
       var detail = {
         nodes: added.concat(changed),
         pageId: pageIri(),
-        addParts: added.filter(function (n) { return n['oa:hasSelector']; }).map(function (n) { return n['@id']; }),
+        addParts: added.filter(function (n) { return selectorIn(n); }).map(function (n) { return n['@id']; }),
         removeIds: deleted.map(function (id) { return 'doc:' + id; })
       };
       if (hasImageGraph) { detail.graphId = IMAGE_GRAPH; }

@@ -140,8 +140,39 @@ class Document(unittest.TestCase):
         by_id = flat(doc)
         a = by_id["doc:region-a"]
         self.assertEqual(a["rdfs:label"], [{"@value": "Region A"}])
-        self.assertEqual(a["oa:hasSelector"][0]["rdf:value"], "xywh=pixel:142,258,19,22")
         self.assertEqual(a["lio:shows"], [{"@id": "http://dbpedia.org/resource/Boat"}])
+
+    def test_a_region_is_a_specific_resource_with_an_annotation_of_its_own(self):
+        _, _, doc = self.build()
+        by_id = flat(doc)
+        region = by_id["doc:region-a"]
+        self.assertIn("oa:SpecificResource", region["@type"])
+        self.assertEqual(region["oa:hasSource"], [{"@id": "doc:canvas"}])
+        self.assertEqual(region["oa:hasSelector"][0]["rdf:value"], "xywh=pixel:142,258,19,22")
+        for gone in ("oa:hasTarget", "oa:hasBody", "oa:motivation"):
+            self.assertNotIn(gone, region)
+        annotation = by_id["doc:annotation-a"]
+        self.assertEqual(annotation["@type"], ["oa:Annotation"])
+        self.assertEqual(annotation["oa:motivatedBy"], [{"@id": "oa:identifying"}])
+        self.assertEqual(annotation["oa:hasTarget"], [{"@id": "doc:region-a"}])
+        self.assertEqual(annotation["oa:hasBody"], region["lio:shows"])
+        parts = [p["@id"] for p in by_id[doc["page"]]["schema:hasPart"]]
+        self.assertFalse([p for p in parts if "annotation" in p], "annotations are not parts of the page")
+
+    def test_the_annotations_are_in_a_collection(self):
+        _, _, doc = self.build()
+        by_id = flat(doc)
+        annotations = sorted(i for i, n in by_id.items() if n.get("@type") == ["oa:Annotation"])
+        self.assertTrue(annotations)
+        collection, page = by_id["doc:annotations"], by_id["doc:annotations-page"]
+        self.assertEqual(collection["@type"], ["as:OrderedCollection"])
+        self.assertEqual(collection["as:totalItems"], [{"@value": len(annotations)}])
+        self.assertEqual(collection["as:first"], [{"@id": "doc:annotations-page"}])
+        self.assertEqual(page["@type"], ["as:OrderedCollectionPage"])
+        self.assertEqual(page["as:partOf"], [{"@id": "doc:annotations"}])
+        self.assertEqual(sorted(i["@id"] for i in page["as:items"]), annotations)
+        self.assertNotIn("@list", json.dumps(page))
+        self.assertIn("as", doc["graph"]["@context"])
 
     def test_chrome_is_left_out(self):
         _, _, doc = self.build()
